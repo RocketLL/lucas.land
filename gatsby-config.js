@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         remarkPlugins: [require(`remark-math`)],
-        rehypePlugins: [require(`rehype-katex`)]
+        rehypePlugins: [require(`rehype-katex`)],
       },
     },
     {
@@ -61,6 +61,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-json`,
-    `gatsby-plugin-preload-fonts`
+    `gatsby-plugin-preload-fonts`,
   ],
 }

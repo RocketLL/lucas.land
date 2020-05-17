@@ -7,7 +7,6 @@ import Header from "../components/header"
 
 require("katex/dist/katex.min.css")
 
-
 const shortcodes = { Link } // Provide common components here
 
 export default function PageTemplate({ data: { mdx } }) {

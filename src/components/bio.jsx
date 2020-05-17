@@ -7,19 +7,24 @@ import Emoji from "./emoji"
 import { LocaleContext } from "./wrapper"
 
 const Bio = () => {
-  const [shownLink, setShownLink] = useState("");
+  const [shownLink, setShownLink] = useState("")
 
   const { locale } = React.useContext(LocaleContext)
   return (
     <div className={styles.bio}>
-      <h1 className={styles.name}>{locale === "en" ? "Lucas Lee" : "이윤규"}</h1>
-      <h2 className={styles.job}>{locale === "en" ? "~/rocketll" : "~/rocketll"}</h2>
+      <h1 className={styles.name}>
+        {locale === "en" ? "Lucas Lee" : "이윤규"}
+      </h1>
+      <h2 className={styles.job}>
+        {locale === "en" ? "~/rocketll" : "~/rocketll"}
+      </h2>
       <div className={styles.links}>
         <a
           className={styles.link}
           href="https://github.com/rocketll"
           onMouseEnter={() => setShownLink("github")}
-          onMouseLeave={() => setShownLink("")}>
+          onMouseLeave={() => setShownLink("")}
+        >
           <Emoji className={styles.emoji} type="coder" />
           {/* <AiFillGithub size="1.3em" /> */}
           <span className={styles.title}>github</span>
@@ -28,7 +33,7 @@ const Bio = () => {
             style={{
               transition: "0.3s",
               marginLeft: shownLink === "github" ? 0 : -20,
-              opacity: shownLink === "github" ? 1 : 0
+              opacity: shownLink === "github" ? 1 : 0,
             }}
           />
         </a>
@@ -46,9 +51,10 @@ const Bio = () => {
             style={{
               transition: "margin-left 0.3s, opacity 0.3s",
               marginLeft: shownLink === "mail" ? 0 : -20,
-              opacity: shownLink === "mail" ? 1 : 0
+              opacity: shownLink === "mail" ? 1 : 0,
             }}
-          />        </a>
+          />{" "}
+        </a>
       </div>
       {/* <span className={styles.shown}>{shownLink}</span> */}
     </div>

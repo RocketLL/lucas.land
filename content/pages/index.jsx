@@ -2,7 +2,6 @@ import React from "react"
 
 import Bio from "../../src/components/bio"
 import Story from "../../src/components/story"
-import Emoji from "../../src/components/emoji"
 
 import styles from "../../src/scss/layout.module.scss"
 

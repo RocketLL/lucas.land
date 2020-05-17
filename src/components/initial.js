@@ -12,7 +12,7 @@ const getDark = () => {
   return false
 }
 
-const setDark = (val) => {
+const setDark = val => {
   document.body.setAttribute("theme", val ? "dark" : "light")
   localStorage.setItem("dark", val ? "true" : "false")
 }

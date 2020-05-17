@@ -12,13 +12,13 @@ exports.onCreatePage = ({ page, actions }) => {
 
   deletePage(page)
 
-  const pageName = path.basename(page.path, ".kr") 
+  const pageName = path.basename(page.path, ".kr")
   const pagePath = pageName === "index" ? "/" : pageName
-  const lang = removeTrailingSlash(page.path).split(".").pop() === "kr" ? "kr" : "en";
-  const localizedPath = lang === "en"
-    ? page.path
-    : `${locales.kr.path}/${pagePath}`
-  
+  const lang =
+    removeTrailingSlash(page.path).split(".").pop() === "kr" ? "kr" : "en"
+  const localizedPath =
+    lang === "en" ? page.path : `${locales.kr.path}/${pagePath}`
+
   console.log(localizedPath)
 
   return createPage({
@@ -27,10 +27,9 @@ exports.onCreatePage = ({ page, actions }) => {
     context: {
       ...page.context,
       locale: lang,
-      type: "page"
-    }
+      type: "page",
+    },
   })
-
 
   // Object.keys(locales).map(lang => {
   //   const localizedPath = locales[lang].default
@@ -94,7 +93,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMdx.nodes
-  posts.forEach((post) => {
+  posts.forEach(post => {
     const lang = path.basename(path.dirname(post.fileAbsolutePath))
     const slug = post.frontmatter.slug
     const locale = post.fields.locale
@@ -106,7 +105,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         // id: post.id,
         locale: locale,
-        type: "post"
+        type: "post",
       },
     })
   })
