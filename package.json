@@ -41,8 +41,8 @@
   "license": "MIT",
   "scripts": {
     "preload-fonts": "gatsby-preload-fonts",
-    "build": "npm run preload-fonts && gatsby build",
-    "develop": "npm run preload-fonts && gatsby develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
