@@ -1,25 +1,30 @@
 .controls {
   position: fixed;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   top: 0;
   right: 0;
   margin: 0.5em;
-
-  .lang {
-    .emoji {
-      width: 1.5em;
-      height: 1.5em;
-    }
-  }
 
   .theme {
     background: none;
     border: none;
     padding: 0;
-    height: 1.5em;
+    outline: none;
+
+    cursor: pointer;
+  }
+
+  .lang,
+  .theme {
+    width: 2em;
+    height: 2em;
+    margin: .1em;
 
     .emoji {
-      width: 1.5em;
-      height: 1.5em;
+      width: 2em;
+      height: 2em;
     }
   }
 }

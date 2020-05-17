@@ -10,7 +10,7 @@ const LangToggler = () => {
   const { locale, location } = React.useContext(LocaleContext)
   const to = locale === "en" ? `/kr${location.pathname}` : location.pathname.split("/kr").pop()
   return (
-    <Link to={to} className={styles.lang}>
+    <Link to={to} className={styles.lang} title="toggle language">
       {locale === "en"
         ? <Emoji className={styles.emoji} type="kr" />
         : <Emoji className={styles.emoji} type="us" />}
