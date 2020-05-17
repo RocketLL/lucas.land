@@ -60,6 +60,7 @@ module.exports = {
         postCssPlugins: [require("autoprefixer")()],
       },
     },
-    `gatsby-transformer-json`
+    `gatsby-transformer-json`,
+    `gatsby-plugin-preload-fonts`
   ],
 }
