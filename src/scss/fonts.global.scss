@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/Inter-Regular.woff2?v=3.13") format("woff2"),
+  src: local("☺"), url("../fonts/Inter-Regular.woff2?v=3.13") format("woff2"),
     url("../fonts/Inter-Regular.woff?v=3.13") format("woff");
 }
 
@@ -12,7 +12,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/Inter-Italic.woff2?v=3.13") format("woff2"),
+  src: local("☺"), url("../fonts/Inter-Italic.woff2?v=3.13") format("woff2"),
     url("../fonts/Inter-Italic.woff?v=3.13") format("woff");
 }
 
@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../fonts/Inter-Bold.woff2?v=3.13") format("woff2"),
+  src: local("☺"), url("../fonts/Inter-Bold.woff2?v=3.13") format("woff2"),
     url("../fonts/Inter-Bold.woff?v=3.13") format("woff");
 }
 
@@ -30,6 +30,25 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url("../fonts/Inter-BoldItalic.woff2?v=3.13") format("woff2"),
+  src: local("☺"), url("../fonts/Inter-BoldItalic.woff2?v=3.13") format("woff2"),
     url("../fonts/Inter-BoldItalic.woff?v=3.13") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("☺"),
+    url("../fonts/noto-sans-kr-regular.woff2?v=12") format("woff2"),
+    url("../fonts/noto-sans-kr-regular.woff?v=12") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("☺"), url("../fonts/noto-sans-kr-700.woff2?v=12") format("woff2"),
+    url("../fonts/noto-sans-kr-700.woff?v=12") format("woff");
 }
