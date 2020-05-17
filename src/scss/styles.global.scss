@@ -1,0 +1,20 @@
+@import "./variables.global.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.kr {
+  word-break: keep-all;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-txt);
+  transition: background-color 0.1s;
+}
+
+*::selection {
+  background-color: #b1b9ff;
+}

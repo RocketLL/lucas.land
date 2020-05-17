@@ -1,0 +1,12 @@
+{
+  "en": {
+    "default": true,
+    "path": "en",
+    "locale": "en-US"
+  },
+  "kr": {
+    "default": false,
+    "path": "kr",
+    "locale": "ko-KR"
+  }
+}

@@ -1,0 +1,54 @@
+@import "./variables.global.scss";
+
+$width-left: 35vw;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+  font-family: $font-ss;
+
+  &.large {
+    display: flex;
+    flex-direction: column;
+    max-width: 70rem;
+    margin: 3rem;
+    @media only screen and (min-width: $breakpoint) {
+      margin: 0;
+      max-width: unset;
+    }
+
+    .container {
+      flex: 1 0 10em;
+
+      &.left {
+        display: flex;
+        @media only screen and (min-width: $breakpoint) {
+          position: fixed;
+          justify-content: flex-end;
+          top: 0;
+          left: 0;
+          width: $width-left;
+          padding: 10rem 0 5rem 5rem;
+          height: 100vh;
+        }
+      }
+
+      &.right {
+        width: 100%;
+
+        @media only screen and (min-width: $breakpoint) {
+          position: absolute;
+          top: 0;
+          max-width: calc(100vw - 2 * #{$width-left} + 12rem);
+          margin: 0 0 0 $width-left;
+          padding: 10rem 0 0 0;
+          height: 100vh;
+        }
+      }
+    }
+
+    @media only screen and (min-width: $breakpoint) {
+    }
+  }
+}

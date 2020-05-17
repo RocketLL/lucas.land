@@ -1,0 +1,16 @@
+$font-ss: "Inter", "Noto Sans KR";
+$breakpoint: 1000px;
+
+$color-sub: #999999;
+$color-bg: #1b1b1b;
+$color-txt: #ffffff;
+
+:root {
+  --color-bg: #ffffff;
+  --color-txt: #000000;
+}
+
+[theme="dark"] {
+  --color-bg: #000000;
+  --color-txt: #ffffff;
+}

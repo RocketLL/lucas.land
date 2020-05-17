@@ -1,7 +1,113 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require("path")
+const locales = require("./i18n")
 
-// You can delete this file if you're not using it
+const {
+  localizedSlug,
+  findKey,
+  removeTrailingSlash,
+} = require(`./utils/gatsby-node-helpers`)
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions
+
+  deletePage(page)
+
+  const pageName = path.basename(page.path, ".kr") 
+  const pagePath = pageName === "index" ? "/" : pageName
+  const lang = removeTrailingSlash(page.path).split(".").pop() === "kr" ? "kr" : "en";
+  const localizedPath = lang === "en"
+    ? page.path
+    : `${locales.kr.path}/${pagePath}`
+  
+  console.log(localizedPath)
+
+  return createPage({
+    ...page,
+    path: removeTrailingSlash(localizedPath),
+    context: {
+      ...page.context,
+      locale: lang,
+      type: "page"
+    }
+  })
+
+
+  // Object.keys(locales).map(lang => {
+  //   const localizedPath = locales[lang].default
+  //     ? page.path
+  //     : `${locales[lang].path}${page.path}`
+
+  //   return createPage({
+  //     ...page,
+  //     path: removeTrailingSlash(localizedPath),
+  //     context: {
+  //       ...page.context,
+  //       locale: lang,
+  //     },
+  //   })
+  // })
+}
+
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `Mdx`) {
+    const defaultLang = findKey(locales, o => o.default === true)
+
+    const lang = path.basename(path.dirname(node.fileAbsolutePath))
+
+    const isDefault = lang === defaultLang
+
+    createNodeField({ node, name: `locale`, value: lang })
+    createNodeField({ node, name: `isDefault`, value: isDefault })
+  }
+
+  // if (node.internal.type === "SitePage") {
+  //   const lang = path.basename(path.dirname(node.fileAbsolutePath))
+  // }
+}
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions
+  const postTemplate = path.resolve(`./src/templates/post.jsx`)
+
+  const result = await graphql(`
+    query {
+      allMdx {
+        nodes {
+          fields {
+            isDefault
+            locale
+          }
+          id
+          frontmatter {
+            slug
+          }
+          fileAbsolutePath
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
+  }
+
+  const posts = result.data.allMdx.nodes
+  posts.forEach((post) => {
+    const lang = path.basename(path.dirname(post.fileAbsolutePath))
+    const slug = post.frontmatter.slug
+    const locale = post.fields.locale
+    const isDefault = post.fields.isDefault
+
+    createPage({
+      path: localizedSlug({ isDefault, locale, slug }),
+      component: postTemplate,
+      context: {
+        // id: post.id,
+        locale: locale,
+        type: "post"
+      },
+    })
+  })
+}

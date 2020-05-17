@@ -1,0 +1,25 @@
+.controls {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0.5em;
+
+  .lang {
+    .emoji {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+
+  .theme {
+    background: none;
+    border: none;
+    padding: 0;
+    height: 1.5em;
+
+    .emoji {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+}
