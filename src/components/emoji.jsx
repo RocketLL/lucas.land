@@ -38,7 +38,12 @@ const Emoji = ({ type, className }) => {
     }
   `)
   return (
-    <Img className={`${styles.emoji} ${className}`} style={{width: "none", height: "none"}} fixed={data[type].childImageSharp.fixed}></Img>
+    <Img
+      className={`${styles.emoji} ${className}`}
+      style={{ width: "none", height: "none" }}
+      fixed={data[type].childImageSharp.fixed}
+      Tag="span"
+    />
   )
 }
 
