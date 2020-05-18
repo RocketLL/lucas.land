@@ -1,16 +1,41 @@
 $font-ss: "Inter", "Noto Sans KR", sans-serif;
 $breakpoint: 1000px;
 
-$color-sub: #999999;
-$color-bg: #1b1b1b;
-$color-txt: #ffffff;
+$colors: (
+  color-txt: #383838,
+  color-sub: #aaaaaa,
+  color-bg: #ffffff,
+  color-hl1: #ffffff,
+  color-hl2: #ffffff,
+  color-sel: #a7bcff,
+);
+
+$color-txt: var(--color-txt);
+$color-sub: var(--color-sub);
+$color-bg: var(--color-bg);
+$color-hl1: var(--color-hl1);
+$color-h12: var(--color-hl2);
+$color-sel: var(--color-sel);
+
+@mixin var($var, $color, $opt...) {
+  #{$var}: $opt map-get($colors, #{$color});
+  #{$var}: $opt var(--#{$color});
+}
 
 :root {
-  --color-bg: #ffffff;
-  --color-txt: #000000;
+  --color-bg: #{map-get($colors, color-bg)};
+  --color-txt: #{map-get($colors, color-txt)};
+  --color-sub: #{map-get($colors, color-sub)};
+  --color-hl1: #{map-get($colors, color-hl1)};
+  --color-hl2: #{map-get($colors, color-hl2)};
+  --color-sel: #{map-get($colors, color-sel)};
 }
 
 [theme="dark"] {
   --color-bg: #000000;
   --color-txt: #ffffff;
+  --color-sub: #aaaaaa;
+  --color-hl1: #3efff5;
+  --color-hl2: #ffffff;
+  --color-sel: #aaaaaa;
 }
