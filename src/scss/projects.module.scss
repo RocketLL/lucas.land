@@ -1,0 +1,19 @@
+@import "./variables.global.scss";
+
+.project {
+  display: flex;
+  flex-direction: row;
+  align-items: centers;
+  margin: 2em 0;
+
+  .title, .desc {
+    font-size: 1.4em;
+    font-weight: 400;
+  }
+
+  .title {
+    width: 30%;
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
