@@ -12,9 +12,9 @@ const Story = () => {
     return (
       <>
         <p className={styles.story}>
-          Hi
-          <Emoji className={styles.emoji} type="wave" />, I'm Lucas. I'm a
-          student from South Korea attending Hana Academy Seoul. I enjoy physics
+          <span className={styles.emph}>Hi
+          <Emoji className={styles.emoji} type="wave" />, I'm Lucas.</span>
+           I'm a student from South Korea attending Hana Academy Seoul. I enjoy physics
           and programming.
         </p>
         <p className={styles.story}>

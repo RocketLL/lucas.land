@@ -1,7 +1,13 @@
 .story {
-  font-size: 1.4em;
+  font-size: 1.3em;
   margin: 0 0 2em 0;
   line-height: 2;
+  font-weight: 400;
+
+  .emph {
+    margin-right: .3em;
+    font-weight: 700;
+  }
 
   .emoji {
     width: 1.1em;

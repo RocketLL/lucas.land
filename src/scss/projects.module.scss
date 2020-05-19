@@ -3,17 +3,31 @@
 .project {
   display: flex;
   flex-direction: row;
-  align-items: centers;
+  align-items: centers; 
   margin: 2em 0;
 
-  .title, .desc {
-    font-size: 1.4em;
+  .link,
+  .desc {
+    font-size: 1.2em;
     font-weight: 400;
   }
 
-  .title {
+  .desc {
+    line-height: 1.5;
+  }
+
+  .link {
     width: 30%;
+    font-weight: 500;
     margin: 0;
     flex-shrink: 0;
+    text-decoration: none;
+    @include var(color, color-hl2);
+
+    .title {
+      &:hover {
+        @include var(background, color-hl2-a);
+      }
+    }
   }
 }
