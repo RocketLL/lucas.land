@@ -18,5 +18,5 @@ body {
 }
 
 *::selection {
-  @include var(background, color-sel);
+  @include var(background, color-hl2-a);
 }
