@@ -21,7 +21,6 @@
     font-weight: 400;
   }
 
-
   .links {
     display: flex;
     flex-direction: column;
@@ -33,14 +32,16 @@
       flex-direction: row;
       align-items: center;
       text-decoration: none;
-      transition: 0.3s ease-in-out;
 
-      @include var(color, color-sub);
+      .icon {
+        transition: margin-left 0.3s, opacity 0.3s;
+        @include var(color, color-hl1);
+      }
 
       .title {
-        @include var(color, color-sub);
+        @include var(color, color-txt);
       }
-    
+
       .emoji {
         width: 1.7em;
         height: 1.7em;

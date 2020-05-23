@@ -30,8 +30,8 @@ const Bio = () => {
           <span className={styles.title}>github</span>
           <BsArrowRightShort
             size="1.3em"
+            className={styles.icon}
             style={{
-              transition: "0.3s",
               marginLeft: shownLink === "github" ? 0 : -20,
               opacity: shownLink === "github" ? 1 : 0,
             }}
@@ -48,8 +48,8 @@ const Bio = () => {
           <span className={styles.title}>mail</span>
           <BsArrowRightShort
             size="1.3em"
+            className={styles.icon}
             style={{
-              transition: "margin-left 0.3s, opacity 0.3s",
               marginLeft: shownLink === "mail" ? 0 : -20,
               opacity: shownLink === "mail" ? 1 : 0,
             }}
