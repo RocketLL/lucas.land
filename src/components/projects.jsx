@@ -8,9 +8,11 @@ import { link } from "../../src/scss/text.module.scss"
 
 const Project = ({ title, desc, url }) => (
   <div className={styles.project}>
-    <a href={url} className={styles.link}>
-      <span className={`${styles.title} ${link}`}>{title}</span>
-    </a>
+    <div className={styles.linkWrapper}>
+      <a href={url} className={link}>
+        {title}
+      </a>
+    </div>
     <span className={styles.desc}>{desc}</span>
   </div>
 )
