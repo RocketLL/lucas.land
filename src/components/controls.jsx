@@ -1,8 +1,8 @@
 import React from "react"
 import { LocaleContext } from "./wrapper"
 
-import LangToggler from "./langtoggle"
-import ThemeToggler from "./themetoggler"
+import LangToggler from "./langToggle"
+import ThemeToggler from "./themeToggle"
 
 import styles from "../scss/controls.module.scss"
 
@@ -15,7 +15,11 @@ const Controls = () => {
         <ThemeToggler />
       </div>
     )
-  else return null
+  else return (
+    <div className={styles.controls}>
+      <ThemeToggler />
+    </div>
+  )
 }
 
 export default Controls
