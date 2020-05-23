@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 
 import styles from "../../src/scss/bio.module.scss"
 
@@ -8,8 +8,8 @@ import { LocaleContext } from "./wrapper"
 
 const Bio = () => {
   const [shownLink, setShownLink] = useState("")
+  const { locale } = useContext(LocaleContext)
 
-  const { locale } = React.useContext(LocaleContext)
   return (
     <div className={styles.bio}>
       <h1 className={styles.name}>

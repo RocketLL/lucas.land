@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import { LocaleContext } from "./wrapper"
 import locales from "../../i18n.json"
 
-// Use the globally available context to choose the right path
 const LocalizedLink = ({ to, ...props }) => {
   const { locale } = React.useContext(LocaleContext)
 

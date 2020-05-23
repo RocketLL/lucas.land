@@ -60,10 +60,6 @@ exports.onCreateNode = ({ node, actions }) => {
     createNodeField({ node, name: `locale`, value: lang })
     createNodeField({ node, name: `isDefault`, value: isDefault })
   }
-
-  // if (node.internal.type === "SitePage") {
-  //   const lang = path.basename(path.dirname(node.fileAbsolutePath))
-  // }
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
