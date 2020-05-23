@@ -1,0 +1,27 @@
+@import "./variables.global.scss";
+
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 0 2em 0;
+
+  .date {
+    font-variant-numeric: tabular-nums;
+    @include var(color, color-sub);
+  }
+
+  .title {
+    color: inherit;
+    font-size: 1.35em;
+    text-decoration: none;
+    transition: background 0.25s;
+    flex-shrink: 1;
+    border-bottom: 1px solid;
+    @include var(border-color, color-hl1);
+
+    &:hover {
+      @include var(background, color-hl1-a);
+    }
+  }
+}
