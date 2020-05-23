@@ -22,9 +22,9 @@ const Projects = () => {
       <>
         <h2 className={header}>Projects</h2>
         <Project
-          title="linalg"
-          desc="pure python linear algebra"
-          link="https://github.com/rocketll/linalg"
+          title="hmm."
+          desc="Hana Academy Seoul student magazine"
+          link="https://hashmm.com"
         />
         <Project
           title="ramen"

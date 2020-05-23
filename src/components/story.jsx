@@ -14,7 +14,7 @@ const Story = () => {
         <p className={styles.story}>
           <span className={styles.emph}>Hi
           <Emoji className={styles.emoji} type="wave" />, I'm Lucas.</span>
-           I'm a student from South Korea attending Hana Academy Seoul. I enjoy physics
+           I'm a student from South Korea attending <a href="/" className={styles.link}>Hana Academy Seoul</a>. I enjoy physics
           and programming.
         </p>
         <p className={styles.story}>

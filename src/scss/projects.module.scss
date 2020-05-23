@@ -3,12 +3,12 @@
 .project {
   display: flex;
   flex-direction: row;
-  align-items: centers; 
+  align-items: centers;
   margin: 2em 0;
 
   .link,
   .desc {
-    font-size: 1.2em;
+    font-size: 1.35em;
     font-weight: 400;
   }
 
@@ -22,11 +22,16 @@
     margin: 0;
     flex-shrink: 0;
     text-decoration: none;
-    @include var(color, color-hl2);
+    color: inherit;
+    transition: background 0.25s;
 
     .title {
+      transition: background 0.25s;
+      border-bottom: 1px solid;
+      @include var(border-color, color-hl1);
+
       &:hover {
-        @include var(background, color-hl2-a);
+        @include var(background, color-hl1-a);
       }
     }
   }
