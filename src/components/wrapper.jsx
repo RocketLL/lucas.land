@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, createContext } from "react"
 
 import Controls from "./controls"
 
 import styles from "../scss/wrapper.module.scss"
 import "../scss/styles.global.scss"
 
-const LocaleContext = React.createContext()
-const ThemeContext = React.createContext()
+const LocaleContext = createContext()
+const ThemeContext = createContext()
 
 const Wrapper = ({ children, pageContext: { locale, type }, location }) => {
   const [dark, rawSetDark] = useState(false)
