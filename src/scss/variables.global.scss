@@ -4,7 +4,7 @@ $font-ss: "Inter", "Noto Sans KR", sans-serif;
 $breakpoint-l: 1000px;
 $breakpoint-s: 600px;
 
-// #00cece, rgba(12, 161, 154, 0.2), 
+// #00cece, rgba(12, 161, 154, 0.2),
 $colors: (
   color-txt: #383838,
   color-sub: #aaaaaa,
@@ -13,39 +13,21 @@ $colors: (
   color-hl2: #dd0a7a,
   color-hl1-a: rgba(12, 161, 154, 0.2),
   color-hl2-a: rgba(221, 10, 122, 0.2),
-  color-sel: #a7bcff,
+  color-sel: rgba(12, 161, 154, 0.2),
 );
 
-$color-txt: var(--color-txt);
-$color-sub: var(--color-sub);
-$color-bg: var(--color-bg);
-$color-hl1: var(--color-hl1);
-$color-h12: var(--color-hl2);
-$color-sel: var(--color-sel);
+$colors-dark: (
+  color-bg: #000000,
+  color-txt: #ffffff,
+  color-sub: #aaaaaa,
+  color-hl1: #3efff5,
+  color-hl2: #fa56ab,
+  color-hl1-a: rgba(62, 255, 245, 0.2),
+  color-hl2-a: rgba(250, 86, 171, 0.2),
+  color-sel: rgba(62, 255, 245, 0.2),
+);
 
 @mixin var($var, $color, $opt...) {
   #{$var}: $opt map-get($colors, #{$color});
   #{$var}: $opt var(--#{$color});
-}
-
-:root {
-  --color-bg: #{map-get($colors, color-bg)};
-  --color-txt: #{map-get($colors, color-txt)};
-  --color-sub: #{map-get($colors, color-sub)};
-  --color-hl1: #{map-get($colors, color-hl1)};
-  --color-hl2: #{map-get($colors, color-hl2)};
-  --color-hl1-a: #{map-get($colors, color-hl1-a)};
-  --color-hl2-a: #{map-get($colors, color-hl2-a)};
-  --color-sel: #{map-get($colors, color-sel)};
-}
-
-[theme="dark"] {
-  --color-bg: #000000;
-  --color-txt: #ffffff;
-  --color-sub: #aaaaaa;
-  --color-hl1: #3efff5;
-  --color-hl2: #fa56ab;
-  --color-hl1-a: rgba(62, 255, 245, 0.2);
-  --color-hl2-a: rgba(250, 86, 171, 0.2);
-  --color-sel: #aaaaaa;
 }

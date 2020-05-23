@@ -1,7 +1,6 @@
 @import "./variables.global.scss";
 @import "./fonts.global.scss";
 
-
 * {
   box-sizing: border-box;
 }
@@ -17,6 +16,28 @@ body {
   transition: background-color 0.1s;
 }
 
-*::selection {
-  @include var(background, color-hl2-a);
+::selection {
+  @include var(background, color-sel);
+}
+
+:root {
+  --color-bg: #{map-get($colors, color-bg)};
+  --color-txt: #{map-get($colors, color-txt)};
+  --color-sub: #{map-get($colors, color-sub)};
+  --color-hl1: #{map-get($colors, color-hl1)};
+  --color-hl2: #{map-get($colors, color-hl2)};
+  --color-hl1-a: #{map-get($colors, color-hl1-a)};
+  --color-hl2-a: #{map-get($colors, color-hl2-a)};
+  --color-sel: #{map-get($colors, color-sel)};
+}
+
+[theme="dark"] {
+  --color-bg: #{map-get($colors-dark, color-bg)};
+  --color-txt: #{map-get($colors-dark, color-txt)};
+  --color-sub: #{map-get($colors-dark, color-sub)};
+  --color-hl1: #{map-get($colors-dark, color-hl1)};
+  --color-hl2: #{map-get($colors-dark, color-hl2)};
+  --color-hl1-a: #{map-get($colors-dark, color-hl1-a)};
+  --color-hl2-a: #{map-get($colors-dark, color-hl2-a)};
+  --color-sel: #{map-get($colors-dark, color-sel)};
 }
