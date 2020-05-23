@@ -3,23 +3,20 @@ import { graphql } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
-import Header from "../components/header"
+import styles from "../scss/post.module.scss"
 
 require("katex/dist/katex.min.css")
 
-const shortcodes = { Link } // Provide common components here
+const shortcodes = { Link }
 
 export default function PageTemplate({ data: { mdx } }) {
   return (
-    <>
-      <Header />
-      <div>
-        <h1>{mdx.frontmatter.title}</h1>
-        <MDXProvider components={shortcodes}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </MDXProvider>
-      </div>
-    </>
+    <div className={styles.post}>
+      <h1>{mdx.frontmatter.title}</h1>
+      <MDXProvider components={shortcodes}>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+      </MDXProvider>
+    </div>
   )
 }
 
