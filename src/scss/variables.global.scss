@@ -1,8 +1,10 @@
 @use "sass:color";
 
 $font-ss: "Inter", "Noto Sans KR", sans-serif;
-$breakpoint: 1000px;
+$breakpoint-l: 1000px;
+$breakpoint-s: 600px;
 
+// #00cece, rgba(12, 161, 154, 0.2), 
 $colors: (
   color-txt: #383838,
   color-sub: #aaaaaa,
