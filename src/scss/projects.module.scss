@@ -24,15 +24,5 @@
     text-decoration: none;
     color: inherit;
     transition: background 0.25s;
-
-    .title {
-      transition: background 0.25s;
-      border-bottom: 1px solid;
-      @include var(border-color, color-hl1);
-
-      &:hover {
-        @include var(background, color-hl1-a);
-      }
-    }
   }
 }

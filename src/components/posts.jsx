@@ -4,11 +4,12 @@ import { LocaleContext } from "./wrapper"
 
 import styles from "../../src/scss/posts.module.scss"
 import { header } from "../../src/scss/layout.module.scss"
+import { link } from "../../src/scss/text.module.scss"
 
 const PostLink = ({ post, locale }) => (
   <div className={styles.post}>
     <span className={styles.date}>{post.frontmatter.date}</span>
-    <Link className={styles.title} to={locale === "en" ? post.frontmatter.slug : `kr/${post.frontmatter.slug}`} >
+    <Link className={`${styles.title} ${link}`} to={locale === "en" ? post.frontmatter.slug : `kr/${post.frontmatter.slug}`} >
       {post.frontmatter.title}
     </Link>
   </div>

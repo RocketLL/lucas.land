@@ -4,6 +4,7 @@ import Emoji from "../../src/components/emoji"
 import { LocaleContext } from "./wrapper"
 
 import styles from "../../src/scss/story.module.scss"
+import { link } from "../../src/scss/text.module.scss"
 
 const Story = () => {
   const { locale } = React.useContext(LocaleContext)
@@ -14,7 +15,7 @@ const Story = () => {
         <p className={styles.story}>
           <span className={styles.emph}>Hi
           <Emoji className={styles.emoji} type="wave" />, I'm Lucas.</span>
-           I'm a student from South Korea attending <a href="/" className={styles.link}>Hana Academy Seoul</a>. I enjoy physics
+           I'm a student from South Korea attending <a href="/" className={link}>Hana Academy Seoul</a>. I enjoy physics
           and programming.
         </p>
         <p className={styles.story}>
