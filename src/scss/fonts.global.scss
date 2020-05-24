@@ -30,7 +30,8 @@
   font-style: italic;
   font-weight: 500;
   font-display: swap;
-  src: local("☺"), url("../fonts/Inter-MediumItalic.woff2?v=3.13") format("woff2"),
+  src: local("☺"),
+    url("../fonts/Inter-MediumItalic.woff2?v=3.13") format("woff2"),
     url("../fonts/Inter-MediumItalic.woff?v=3.13") format("woff");
 }
 
@@ -60,6 +61,15 @@
   src: local("☺"),
     url("../fonts/noto-sans-kr-regular.woff2?v=12") format("woff2"),
     url("../fonts/noto-sans-kr-regular.woff?v=12") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("☺"), url("../fonts/noto-sans-kr-500.woff2?v=12") format("woff2"),
+    url("../fonts/noto-sans-kr-500.woff?v=12") format("woff");
 }
 
 @font-face {
