@@ -30,16 +30,26 @@ const Projects = () => {
           url="https://hashmm.com"
         />
         <Project
-          title="ramen"
-          desc="🍜 Rust Algorithms for Mathematically Efficient Numerics"
-          url="https://github.com/rocketll/ramen"
+          title="linalg"
+          desc="Pure Python3 linear algebra"
+          url="https://github.com/rocketll/linalg"
         />
       </>
     )
   else
     return (
       <>
-        <h2 className={styles.header}>projects</h2>
+        <h2 className={header}>Projects</h2>
+        <Project
+          title="hmm."
+          desc="하나고등학교 학생 매거진"
+          url="https://hashmm.com"
+        />
+        <Project
+          title="linalg"
+          desc="순수 Python3 선형대수학 패키지"
+          url="https://github.com/rocketll/linalg"
+        />
       </>
     )
 }
