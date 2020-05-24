@@ -99,7 +99,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: localizedSlug({ isDefault, locale, slug }),
       component: postTemplate,
       context: {
-        // id: post.id,
+        id: post.id,
         locale: locale,
         type: "post",
       },

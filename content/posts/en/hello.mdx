@@ -1,9 +1,35 @@
 ---
-slug: "hello2"
+slug: "hello"
 date: "2019-05-04"
-title: "My first blog post"
+title: "Hello World!"
 ---
 
 Wow!
+$$
+\ddot{\vec{\textbf{r}}} = \left( \ddot{r} - r\dot{\theta}^2 \right) \hat{\textbf{e}}_r + \left( r\ddot{\theta} + 2\dot{r}\dot{\theta} \right) \hat{\textbf{e}}_\theta
+$$
 
-Wew \$equations\$ $b^2 = 2ac$
+This is cooooooooooooooool. `getDark()` wow inline code!
+
+```js
+const getDark = () => {
+  const storedPref = localStorage.getItem("dark")
+  if (storedPref === "true" || "false") {
+    return storedPref === "true"
+  }
+
+  const queryPref = matchMedia("(prefers-color-scheme: dark)").matches
+  if (queryPref === true || false) {
+    return queryPref
+  }
+
+  return false
+}
+
+const setDark = val => {
+  document.body.setAttribute("theme", val ? "dark" : "light")
+  localStorage.setItem("dark", val ? "true" : "false")
+}
+
+export { getDark, setDark }
+```

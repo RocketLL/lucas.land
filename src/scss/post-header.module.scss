@@ -1,0 +1,19 @@
+@import "./variables.global.scss";
+
+.header {
+  margin: 2em 0;
+  padding: 2em 0;
+  @include var(border-bottom, color-sub, 1px solid);
+
+  .home {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    @include var(color, color-txt);
+
+    .title {
+      @include var(color, color-txt);
+      margin-left: .2em;
+    }
+  }
+}
