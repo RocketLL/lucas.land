@@ -19,6 +19,7 @@
 
   .job {
     font-weight: 400;
+    @include var(color, color-sub)
   }
 
   .links {
