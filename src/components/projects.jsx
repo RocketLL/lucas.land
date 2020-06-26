@@ -4,12 +4,12 @@ import { LocaleContext } from "./wrapper"
 
 import styles from "../../src/scss/projects.module.scss"
 import { header } from "../../src/scss/layout.module.scss"
-import { link } from "../../src/scss/text.module.scss"
+import { link, important } from "../../src/scss/text.module.scss"
 
 const Project = ({ title, desc, url }) => (
   <div className={styles.project}>
     <div className={styles.linkWrapper}>
-      <a href={url} className={link}>
+      <a href={url} className={`${link} ${important}`}>
         {title}
       </a>
     </div>

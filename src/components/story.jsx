@@ -12,9 +12,9 @@ const Story = () => {
   if (locale === "en")
     return (
       <>
-        <p className={styles.story}>
-          <span className={styles.emph}>Hi
+        <span className={`${styles.emph} ${styles.story}`}>Hi
           <Emoji className={styles.emoji} type="wave" />, I'm Lucas.</span>
+        <p className={styles.story}>
           I'm a student from South Korea attending <a href="https://hana.hs.kr" className={link}>Hana Academy Seoul</a>.
           I enjoy physics and programming.
         </p>
