@@ -4,8 +4,8 @@ $breakpoint-s: 600px;
 
 // #00cece, rgba(12, 161, 154, 0.2),
 $colors: (
-  color-txt: #042147,
-  color-sub: #606d81,
+  color-txt: #222222,
+  color-sub: #888888,
   color-bg: #ffffff,
   color-hl1: #dd0a7a,
   color-hl2: #00cece,
@@ -15,10 +15,10 @@ $colors: (
 );
 
 $colors-dark: (
-  color-bg: #010b13,
-  color-txt: #ffffff,
-  color-sub: #8190a8,
-  color-hl1: #fa56ab,
+  color-bg: #000000,
+  color-txt: #dddddd,
+  color-sub: #888888,
+  color-hl1: #ff77bd,
   color-hl2: #3efff5,
   color-hl1-a: rgba(250, 86, 171, 0.2),
   color-hl2-a: rgba(62, 255, 245, 0.2),

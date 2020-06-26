@@ -5,9 +5,47 @@
   text-decoration: none;
   border-bottom: 1px solid;
   @include var(border-color, color-hl1);
-  transition: background .25s;
+  transition: background 0.25s;
 
   &:hover {
     @include var(background-color, color-hl1-a);
+  }
+
+  &.important {
+    border: none;
+    @include var(color, color-hl1);
+    transition: border 0.25s;
+  
+    &:hover {
+      @include var(border-color, color-hl1);
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+.typography {
+  font-family: $font-ss;
+  font-size: 1em;
+  line-height: 1.5;
+
+  a {
+    @extend .link;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 1.5rem 0;
+  }
+
+  strong {
+    box-sizing: content-box;
+    padding: 0.1em;
+    // @include var(color, color-hl2);
+    @include var(background-color, color-hl2-a);
   }
 }
