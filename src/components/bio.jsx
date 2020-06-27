@@ -1,13 +1,10 @@
-import React, { useState, useContext } from "react"
+import React, { useContext } from "react"
 
 import styles from "../../src/scss/bio.module.scss"
 
-import { BsArrowRightShort } from "react-icons/bs"
-import Emoji from "./emoji"
 import { LocaleContext } from "./wrapper"
 
 const Bio = () => {
-  const [shownLink, setShownLink] = useState("")
   const { locale } = useContext(LocaleContext)
 
   return (

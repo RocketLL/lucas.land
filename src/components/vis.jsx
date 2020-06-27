@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from "react"
+import React, { useEffect } from "react"
 
 import styles from "../../src/scss/vis.module.scss"
 
