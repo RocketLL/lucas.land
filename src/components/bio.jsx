@@ -10,7 +10,7 @@ const Bio = () => {
   return (
     <div className={styles.bio}>
       <h1 className={styles.name}>
-        {locale === "en" ? "Lucas\nLee." : "이윤규."}
+        {locale === "en" ? "Lucas\nLee." : "Lucas\nLee."}
       </h1>
       <div className={styles.about}>
         <div className={styles.col}>
