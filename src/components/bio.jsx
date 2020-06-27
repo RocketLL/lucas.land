@@ -13,50 +13,18 @@ const Bio = () => {
   return (
     <div className={styles.bio}>
       <h1 className={styles.name}>
-        {locale === "en" ? "Lucas Lee" : "이윤규"}
+        {locale === "en" ? "Lucas\nLee." : "이윤규."}
       </h1>
-      <h2 className={styles.job}>
-        {locale === "en" ? "~/rocketll" : "~/rocketll"}
-      </h2>
-      <div className={styles.links}>
-        <a
-          className={styles.link}
-          href="https://github.com/rocketll"
-          onMouseEnter={() => setShownLink("github")}
-          onMouseLeave={() => setShownLink("")}
-        >
-          <Emoji className={styles.emoji} type="coder" />
-          {/* <AiFillGithub size="1.3em" /> */}
-          <span className={styles.title}>github</span>
-          <BsArrowRightShort
-            size="1.3em"
-            className={styles.icon}
-            style={{
-              marginLeft: shownLink === "github" ? 0 : -20,
-              opacity: shownLink === "github" ? 1 : 0,
-            }}
-          />
-        </a>
-        <a
-          className={styles.link}
-          href="mailto:luc4sl33@gmail.com"
-          onMouseEnter={() => setShownLink("mail")}
-          onMouseLeave={() => setShownLink("")}
-        >
-          <Emoji className={styles.emoji} type="email" />
-          {/* <AiFillMail size="1.3em" /> */}
-          <span className={styles.title}>mail</span>
-          <BsArrowRightShort
-            size="1.3em"
-            className={styles.icon}
-            style={{
-              marginLeft: shownLink === "mail" ? 0 : -20,
-              opacity: shownLink === "mail" ? 1 : 0,
-            }}
-          />{" "}
-        </a>
+      <div className={styles.about}>
+        <div className={styles.col}>
+          <span>~/rocketll</span>
+          <span>HAS</span>
+        </div>
+        <div className={styles.col}>
+          <a href="mailto:me@lucas.land" className={styles.link}>me@lucas.land</a>
+          <a href="https://github.com/rocketll" className={styles.link}>github</a>
+        </div>
       </div>
-      {/* <span className={styles.shown}>{shownLink}</span> */}
     </div>
   )
 }

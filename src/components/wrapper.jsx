@@ -24,7 +24,7 @@ const Wrapper = ({ children, pageContext: { locale, type }, location }) => {
   return (
     <LocaleContext.Provider value={{ locale, location, type }}>
       <ThemeContext.Provider value={{ dark, setDark }}>
-        <Controls />
+        {/* <Controls /> */}
         <div className={`${styles.wrapper}`}>{children}</div>
       </ThemeContext.Provider>
     </LocaleContext.Provider>

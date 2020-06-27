@@ -1,52 +1,65 @@
+/* autoprefixer grid: autoplace */
+
 @import "./variables.global.scss";
 
 .bio {
-  @media only screen and (min-width: $breakpoint-l) {
-    margin: 4.4em 2em 0 0;
-    width: 10em;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 3rem;
+
+  @media only screen and (max-width: 40rem) {
+    padding: 1.5rem;
+    justify-content: space-between;
   }
 
   .name {
     font-weight: 700;
+    font-size: 2.7em;
+    font-family: "Druk Text Wide", "Noto Sans KR";
+    margin: 0.9rem 0;
+
+    @media only screen and (max-width: 40rem) {
+      font-size: 1.8em;
+      white-space: pre-wrap;
+      line-height: 1;
+    }
   }
 
-  .name,
-  .job {
-    line-height: 1.5;
-    font-size: 1.2em;
-    margin: 0;
-  }
-
-  .job {
-    font-weight: 400;
-    @include var(color, color-sub)
-  }
-
-  .links {
+  .about {
+    font-size: 0.9em;
     display: flex;
-    flex-direction: column;
-    margin-top: 0.5em;
-    transition: 0.3s ease-in-out;
+    flex-direction: row;
+
+    @media only screen and (max-width: 40rem) {
+      font-size: 0.8em;
+    }
+
+    .col {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      margin: 0 5rem 0 0;
+
+      @media only screen and (max-width: 40rem) {
+        margin: 0 3rem 0 0;
+      }
+
+      * {
+        display: inline;
+        margin: 0.2em 0;
+        flex-grow: 0;
+      }
+    }
 
     .link {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+      @include var(color, txt);
       text-decoration: none;
+      transition: transform 0.2s linear;
 
-      .icon {
-        transition: margin-left 0.3s, opacity 0.3s;
-        @include var(color, color-hl1);
-      }
-
-      .title {
-        @include var(color, color-txt);
-      }
-
-      .emoji {
-        width: 1.7em;
-        height: 1.7em;
-        margin-right: 0.5em;
+      &:hover {
+        transform: rotateY(20deg);
       }
     }
   }

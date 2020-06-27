@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "lucas.land",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Code for lucas.land",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Lucas Lee <me@lucas.land>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.1",
     "@mdx-js/react": "^1.6.1",

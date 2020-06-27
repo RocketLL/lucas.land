@@ -1,0 +1,14 @@
+.vis {
+  position: fixed;
+  z-index: -1;
+  width: 100vh;
+  right: 0;
+  bottom: 0;
+  margin-right: -250px;
+
+  @media only screen and (max-width: 40rem) {
+    width: calc(100vh);
+    margin-right: -45vh;
+    margin-bottom: -15vh;
+  }
+}
