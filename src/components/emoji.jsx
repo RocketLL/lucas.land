@@ -8,7 +8,7 @@ const Emoji = ({ type, className }) => {
   const data = useStaticQuery(graphql`
     fragment emojiImage on File {
       childImageSharp {
-        fixed(width: 200, height: 200) {
+        fixed(width: 160, height: 160) {
           ...GatsbyImageSharpFixed
         }
       }
