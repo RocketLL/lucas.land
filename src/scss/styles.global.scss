@@ -25,6 +25,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: $font-ss;
+
+  &.index {
+    background: #0000ff;;
+  }
 }
 
 ::selection {
