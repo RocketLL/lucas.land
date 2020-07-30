@@ -96,7 +96,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const isDefault = post.fields.isDefault
 
     createPage({
-      path: localizedSlug({ isDefault, locale, slug }),
+      path: `post${localizedSlug({ isDefault, locale, slug })}`,
       component: postTemplate,
       context: {
         id: post.id,
