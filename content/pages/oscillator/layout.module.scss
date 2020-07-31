@@ -1,10 +1,12 @@
+@import "../../../src/scss/variables.global.scss";
+
 .card {
   background: white;
   color: black;
   border-radius: 1rem;
-  margin: 1em;
+  margin: 1rem;
   padding: 1rem;
-  max-height: calc(100% - 4em);
+  max-height: 100%;
 }
 
 .layout {
@@ -16,6 +18,12 @@
 .oscillator {
   flex-basis: 30rem;
   flex-grow: 2;
+  margin: 1rem 1rem 0 1rem;
+  max-height: calc(100vh - 2rem);
+
+  @media screen and (min-width: 53em) {
+    margin: 1rem 0 1rem 1rem;
+  }
 }
 
 .oscillator > canvas {
@@ -26,4 +34,32 @@
 .controls {
   flex-basis: 20rem;
   flex-grow: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .control {
+    display: flex;
+    justify-content: center;
+
+    .number {
+      width: 5em;
+      font-family: $font-ss;
+    }
+
+    .label {
+      width: 4em;
+      font-family: $font-ss;
+      font-style: italic;
+
+      sub {
+        font-style: normal;
+      }
+    }
+
+    .range {
+      flex-grow: 1;
+    }
+  }
 }

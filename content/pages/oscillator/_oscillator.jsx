@@ -27,43 +27,65 @@ const draw = (ctx, t, vars, state, trail) => {
 
   ctx.clearRect(0, 0, w, h)
 
-  let y, v, a, t_
-  [t_, y, v, a] = state
+  ctx.strokeStyle = "gray"
+  ctx.lineWidth = "1"
+
+  ctx.beginPath()
+  ctx.moveTo(0, 500)
+  ctx.lineTo(1000, 500)
+  ctx.stroke()
+
+  ctx.beginPath()
+  ctx.moveTo(800, 0)
+  ctx.lineTo(800, 1000)
+  ctx.stroke()
+
+  let y, v, t_
+  [t_, y, v] = state
   const x = w * 0.8
   const dt = 0.1
 
-  v = rk4((t_, v_, y_) => f0 * Math.sin(omega * t_) - 2 * gamma * v_ - omega0 ** 2 * (y_ - 500))(v, y, t - start, dt)
+  v = rk4((t_, v_, y_) => f0 * Math.sin(omega * t_) - 2 * gamma * v_ - omega0 ** 2 * (y_ - h / 2))(v, y, t - start, dt)
   y = rk4((t_, y_, v_) => v_)(y, v, t - start, dt)
 
-  ctx.fillStyle = "black"
-  ctx.fillRect(x, y, 12, 12)
+  ctx.fillRect(x - 6, y - 6, 12, 12)
 
-  ctx.fillStyle = "blue"
-  
-  trail.forEach(p => {
-    p[0] -= 1
-    ctx.fillRect(...p, 5, 5)
-  })
+  trail.push([x, y])
 
-  // if (Math.round(t * 10) % 3 == 0) {
-    trail.push([x, y])
+  ctx.strokeStyle = "blue"
+  ctx.lineWidth = "3"
 
-    if (trail.length > 750) {
-      trail.shift()
-    }
-  // }
+  ctx.beginPath()
+
+  for (let i = 0; i < trail.length - 4; i += 3) {
+    trail[i][0] -= 1
+    ctx.moveTo(trail[i][0], trail[i][1])
+    ctx.lineTo(trail[i + 3][0], trail[i + 3][1])
+  }
+
+  ctx.stroke()
+
+  if (trail.length > 800) {
+    trail.shift()
+    trail.shift()
+    trail.shift()
+  }
 
   t += dt
-  window.requestAnimationFrame(_ => draw(ctx, t + dt, vars, [t, y, v, a], trail))
+  window.requestAnimationFrame(_ => draw(ctx, t + dt, vars, [t, y, v], trail))
 }
 
 const Oscillator = (t) => {
   const el = useRef(null)
-  const { vars: { gamma, omega0, f0, omega } } = useContext(OscillatorContext)
+  const { vars: { gamma, omega0, f0, omega, y0, v0 } } = useContext(OscillatorContext)
 
   useEffect(() => {
     const ctx = el.current.getContext("2d")
-    window.requestAnimationFrame(_ => draw(ctx, 0, [gamma, omega0, f0, omega], [0, 800, 0, 0], []))
+    ctx.fillStyle = "black"
+
+    const y0num = parseFloat(y0)
+    const v0num = parseFloat(v0)
+    window.requestAnimationFrame(_ => draw(ctx, 0, [gamma, omega0, f0, omega], [0, y0num + 500, v0num], []))
   })
 
   return (

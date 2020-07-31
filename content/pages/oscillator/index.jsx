@@ -8,11 +8,11 @@ const OscillatorContext = createContext()
 
 const Index = () => {
   const [vars, setVars] = useState({
-    t: 0, gamma: 0.1, omega0: 0.1, f0: 0.1, omega: 0.1
+    y0: -300, v0: 0, t: 0, gamma: 0.1, omega0: 0.1, f0: 0.1, omega: 0.1
   })
 
   return (
-    <OscillatorContext.Provider value={{vars, setVars}}>
+    <OscillatorContext.Provider value={{ vars, setVars }}>
       <Layout>
         <Oscillator />
         <Controls />
