@@ -2,19 +2,13 @@ import React, { useState, useContext } from "react"
 
 import styles from "../../src/scss/bio.module.scss"
 
-import { BsArrowRightShort } from "react-icons/bs"
-import Emoji from "./emoji"
 import { LocaleContext } from "./wrapper"
 
 const Bio = () => {
-  const [shownLink, setShownLink] = useState("")
   const { locale } = useContext(LocaleContext)
 
   return (
     <div className={styles.bio}>
-      <h1 className={styles.name}>
-        {locale === "en" ? "Lucas\nLee." : "이윤규."}
-      </h1>
       <div className={styles.about}>
         <div className={styles.col}>
           <span>~/rocketll</span>

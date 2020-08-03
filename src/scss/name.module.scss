@@ -1,0 +1,15 @@
+.name {
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  font-family: "Druk Text Wide", "Noto Sans KR";
+  margin: 1rem;
+  font-size: 1.8em;
+  white-space: pre-wrap;
+  line-height: 1;
+
+  @media only screen and (max-width: 40rem) {
+    font-size: 1.8em;
+    white-space: pre-wrap;
+    line-height: 1;
+  }
+}
