@@ -1,0 +1,27 @@
+@import "./variables.global.scss";
+
+.name {
+  font-weight: 600;
+  font-size: 2em;
+  font-family: $font-ss;
+  margin: 3rem;
+  height: 4rem;
+  will-change: opacity;
+  word-wrap: none;
+
+  @media screen and (max-width: $breakpoint-m) {
+    white-space: pre-wrap;
+  }
+
+  @media screen and (max-width: $breakpoint-s) {
+    display: none;
+  }
+
+  line-height: 1.2;
+}
+
+body.index {
+  @media screen and (max-width: $breakpoint-s) {
+    display: block;
+  }
+}

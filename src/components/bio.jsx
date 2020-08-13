@@ -1,29 +1,46 @@
 import React, { useContext } from "react"
 
+import { Spring, animated } from "react-spring"
 import styles from "../../src/scss/bio.module.scss"
 
+import TransitionLink, { TransitionState } from 'gatsby-plugin-transition-link'
 import { LocaleContext } from "./wrapper"
+import Posts from "./posts"
 
-const Bio = () => {
+const PostsSpring = ({ children }) => (
+  <TransitionState>
+    {({ mount, transitionStatus }) => (
+      <Spring
+        to={{
+          opacity: transitionStatus === "entered" ? 1 : 0,
+          value: 100
+        }}
+      >
+        {props => <animated.div style={props}>{children}</animated.div>}
+      </Spring>
+    )}
+  </TransitionState>
+)
+
+
+const Bio = ({ to }) => {
   const { locale } = useContext(LocaleContext)
 
   return (
-    <div className={styles.bio}>
-      <h1 className={styles.name}>
-        {locale === "en" ? "Lucas\nLee." : "Lucas\nLee."}
-      </h1>
-      <div className={styles.about}>
-        <div className={styles.col}>
-          <span>~/rocketll</span>
-          <span>HAS</span>
-        </div>
-        <div className={styles.col}>
-          <a href="mailto:me@lucas.land" className={styles.link}>me@lucas.land</a>
-          <a href="https://github.com/rocketll" className={styles.link}>github</a>
-        </div>
-      </div>
+    <div className={styles.about}>
+      <a href={"https://github.com/rocketll"} className={styles.link}>github</a>
+      <span className={styles.sep}></span>
+      <TransitionLink
+        to={to}
+        className={styles.link}
+      >
+        <PostsSpring>
+          {to === "/" ? "home" : to.split("/")}
+        </PostsSpring>
+      </TransitionLink>
     </div>
   )
 }
 
+export { PostsSpring }
 export default Bio

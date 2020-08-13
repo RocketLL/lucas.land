@@ -2,7 +2,8 @@ import React from "react"
 import { Helmet } from "react-helmet"
 
 import Bio from "../../src/components/bio"
-import Vis from "./_vis"
+import Hello from "../../src/components/hello"
+import Cards from "../../src/components/cards"
 
 import styles from "../../src/scss/layout.module.scss"
 
@@ -13,8 +14,9 @@ const Index = () => (
         class: "index"
       }}
     />
-    <Bio />
-    <Vis />
+    <Hello text={"Take a card."} />
+    <Cards />
+    <Bio to={"/posts"} />
   </div>
 )
 

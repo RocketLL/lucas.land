@@ -71,5 +71,6 @@ module.exports = {
     },
     `gatsby-transformer-json`,
     `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-transition-link`
   ],
 }

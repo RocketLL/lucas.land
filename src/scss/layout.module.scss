@@ -7,6 +7,6 @@ $width-left: 35vw;
   height: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 40rem;
   font-family: $font-ss;
+  justify-content: space-between;
 }

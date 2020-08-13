@@ -89,3 +89,21 @@
   src: local("☺"), url("../fonts/DrukTextWide-Bold.woff2?v=1") format("woff2"),
     url("../fonts/DrukTextWide-Bold.woff?v=1") format("woff");
 }
+
+@font-face {
+  font-family: "Druk Text Wide";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("☺"), url("../fonts/DrukTextWide-Super.woff2?v=1") format("woff2"),
+    url("../fonts/DrukTextWide-Super.woff?v=1") format("woff");
+}
+
+@font-face {
+  font-family: "Druk Text Wide";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: local("☺"), url("../fonts/DrukTextWide-Super.woff2?v=1") format("woff2"),
+    url("../fonts/DrukTextWide-Super.woff?v=1") format("woff");
+}

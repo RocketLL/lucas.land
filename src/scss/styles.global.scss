@@ -4,7 +4,9 @@
 html,
 body,
 #___gatsby,
-#gatsby-focus-wrapper {
+#gatsby-focus-wrapper,
+.tl-edges,
+.tl-wrapper {
   width: 100%;
   height: 100%;
 }
@@ -21,13 +23,13 @@ body {
   margin: 0;
   @include var(background, color-bg);
   @include var(color, color-txt);
-  transition: background-color 0.1s;
+  transition: background-color 0.5s;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: $font-ss;
 
   &.index {
-    background: #0000ff;;
+    background: #0000ff;
   }
 }
 

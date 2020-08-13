@@ -29,7 +29,7 @@ pre[class*="language-"] {
   overflow: auto;
   box-sizing: content-box;
 
-  @media only screen and (max-width: $breakpoint-l) {
+  @media only screen and (max-width: $breakpoint-m) {
     padding: 1em;
     box-sizing: border-box;
     margin: 0;

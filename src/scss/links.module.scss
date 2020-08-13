@@ -1,0 +1,76 @@
+@import "./variables.global.scss";
+
+.links {
+  flex-grow: 1;
+  z-index: 0;
+  perspective: 1000px;
+  perspective-origin: 1000px 50vh;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  overflow: hidden;
+  justify-content: center;
+  perspective-origin: 1000px 50%;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    transform: rotateY(20deg);
+    align-items: center;
+    // justify-content: center;
+    overflow: visible;
+    width: 150%;
+    white-space: nowrap;
+
+    &:hover {
+      .marquee {
+        animation-play-state: paused;
+      }
+    }
+
+    .marquee {
+      animation: marquee linear infinite;
+
+      &.fast {
+        animation-duration: 30s;
+
+        &.delayed {
+          animation-delay: 15s;
+        }
+      }
+
+      &.slow {
+        animation-duration: 40s;
+
+        &.delayed {
+          animation-delay: 20s;
+        }
+      }
+    }
+  }
+}
+
+.link {
+  font-size: 15em;
+  text-decoration: none;
+  font-family: "Druk Text Wide", "Noto Sans KR";
+  text-stroke: 2px black;
+  -webkit-text-stroke: 2px black;
+  color: transparent;
+  line-height: 1;
+  display: inline-block;
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: black;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
