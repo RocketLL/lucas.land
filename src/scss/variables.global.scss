@@ -1,28 +1,29 @@
 $font-ss: "Inter", "Noto Sans KR", sans-serif;
-$breakpoint-l: 1000px;
-$breakpoint-s: 600px;
+$breakpoint-l: 70rem;
+$breakpoint-m: 50rem;
 
-// #00cece, rgba(12, 161, 154, 0.2),
 $colors: (
   color-txt: #ffffff,
-  color-sub: #888888,
+  color-sub: #ffffffaa,
   color-bg: #000000,
   color-hl1: #dd0a7a,
   color-hl2: #00cece,
   color-hl1-a: rgba(221, 10, 122, 0.2),
   color-hl2-a: rgba(12, 161, 154, 0.2),
   color-sel: rgba(209, 209, 209, 0.507),
+  color-em: #3310b1,
 );
 
 $colors-dark: (
   color-txt: #ffffff,
-  color-sub: #888888,
+  color-sub: #ffffffaa,
   color-bg: #000000,
   color-hl1: #dd0a7a,
   color-hl2: #00cece,
   color-hl1-a: rgba(221, 10, 122, 0.2),
   color-hl2-a: rgba(12, 161, 154, 0.2),
   color-sel: rgba(209, 209, 209, 0.507),
+  color-em: #3310b1,
 );
 
 @mixin var($var, $color, $opt...) {

@@ -2,20 +2,21 @@ import React from "react"
 import { Helmet } from "react-helmet"
 
 import Bio from "../../src/components/bio"
-import Vis from "./_vis"
-
-import styles from "../../src/scss/layout.module.scss"
+import Layout from "../../src/components/layout"
+import Right from "../../src/components/right"
 
 const Index = () => (
-  <div className={`${styles.layout} ${styles.large}`}>
+  <>
     <Helmet
       bodyAttributes={{
         class: "index"
       }}
     />
-    <Bio />
-    <Vis />
-  </div>
+    <Layout
+      left={<Bio />}
+      right={<Right />}
+    />
+  </>
 )
 
 export default Index

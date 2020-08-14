@@ -1,0 +1,14 @@
+@import "./variables.global.scss";
+
+.logo {
+  width: 2rem;
+  height: 2rem;
+  @include var(fill, color-txt);
+
+  svg {
+    width: 8rem;
+    height: 2rem;
+    margin-left: -2rem;
+    pointer-events: none;
+  }
+}

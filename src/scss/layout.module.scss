@@ -4,9 +4,48 @@ $width-left: 35vw;
 
 .layout {
   width: 100%;
+  max-width: 90rem;
   height: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 40rem;
   font-family: $font-ss;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: unquote("min(36rem, 40%)");
+    padding: 10rem 10rem 0 10rem;
+
+    @media only screen and (max-width: $breakpoint-l) {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    @media only screen and (max-width: $breakpoint-m) {
+      padding: 3rem 3rem 0 3rem;
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: unquote("min(54rem, 60%)");
+    margin-left: unquote("min(36rem, 40%)");
+    padding: 19rem 10rem 0 5rem;
+
+    @media only screen and (max-width: $breakpoint-l) {
+      margin: 0;
+      padding: 7rem 10rem 0 10rem;
+      height: auto;
+      width: 100%;
+    }
+
+    @media only screen and (max-width: $breakpoint-m) {
+      padding: 7rem 3rem 3rem 3rem;
+    }
+  }
 }
