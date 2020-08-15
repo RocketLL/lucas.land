@@ -3,6 +3,7 @@ import styles from "../../src/scss/right.module.scss"
 import { LocaleContext } from "./wrapper"
 import { BsArrowUpRight } from "react-icons/bs"
 import { useSprings, animated } from "react-spring"
+import { Link as GatsbyLink } from "gatsby"
 
 const Links = () => {
   const [springs, set] = useSprings(3, () => ({
@@ -34,24 +35,39 @@ const Links = () => {
     })
   }
 
-  const Link = ({ children, to, i }) => (
-    <a
-      className={styles.link}
-      href={to}
-      onMouseEnter={handleEnter(i)}
-      onMouseLeave={handleLeave(i)}
-    >
-      {children}
-      <animated.i className={styles.icon} style={springs[i]}>
-        <BsArrowUpRight size={"1.2rem"} />
-      </animated.i>
-    </a>
-  )
+  const Link = ({ children, to, i }) => {
+    const internal = /^\/(?!\/)/.test(to)
+    return (internal ?
+      <GatsbyLink
+        className={styles.link}
+        to={to}
+        onMouseEnter={handleEnter(i)}
+        onMouseLeave={handleLeave(i)}
+      >
+        {children}
+        <animated.i className={styles.icon} style={springs[i]} >
+          <BsArrowUpRight size={"1.2rem"} />
+        </animated.i >
+      </GatsbyLink> :
+      <a
+        className={styles.link}
+        href={to}
+        onMouseEnter={handleEnter(i)}
+        onMouseLeave={handleLeave(i)}
+      >
+        {children}
+        <animated.i className={styles.icon} style={springs[i]} >
+          <BsArrowUpRight size={"1.2rem"} />
+        </animated.i>
+      </a>
+    )
+  }
 
   return (
     <div className={styles.links}>
-      <Link to={"https://github.com/rocketll"} i={0}>github</Link>
-      <Link to={"https://behance.net/rocketll"} i={1}>behance</Link>
+      <Link to={"/posts"} i={0}>posts </Link>
+      <Link to={"https://github.com/rocketll"} i={1}>github</Link>
+      <Link to={"https://behance.net/rocketll"} i={2}>behance</Link>
     </div >
   )
 }
