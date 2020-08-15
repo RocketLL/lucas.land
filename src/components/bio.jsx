@@ -38,11 +38,11 @@ const Logo = ({ className }) => {
     >
       <animated.svg
         version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        viewBox="0 0 8000 2000" style={{ "enable-background": "new 0 0 2000 2000" }} xmlSpace="preserve">
+        viewBox="0 0 8000 2000" style={{ enableBackground: "new 0 0 2000 2000" }} xmlSpace="preserve">
         <animated.g {...props}>
-          <polygon class="st0" points="1958.24,1436.35 1287.06,1281.39 1576.4,28.14 1136.38,28.14 869.31,1184.95 869.31,1184.95 
+          <polygon points="1958.24,1436.35 1287.06,1281.39 1576.4,28.14 1136.38,28.14 869.31,1184.95 869.31,1184.95 
 		772.87,1602.7 1190.62,1699.15 1190.62,1699.15 1958.24,1876.36"/>
-          <polygon class="st0" points="1229.74,1500.7 558.57,1345.74 847.91,92.49 407.89,92.49 140.82,1249.3 140.82,1249.3 
+          <polygon points="1229.74,1500.7 558.57,1345.74 847.91,92.49 407.89,92.49 140.82,1249.3 140.82,1249.3 
 			44.37,1667.05 462.13,1763.5 462.13,1763.5 1229.74,1940.71"/>
         </animated.g>
       </animated.svg>
