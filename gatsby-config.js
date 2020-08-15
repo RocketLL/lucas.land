@@ -3,6 +3,8 @@ module.exports = {
     title: `lucas.land`,
     description: `Website of Lucas Lee.`,
     author: `Lucas Lee`,
+    url: `https://lucas.land/`,
+    image: `/card.png`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,9 +24,9 @@ module.exports = {
         short_name: `lucas.land`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#000000`,
+        theme_color: `#3310b1`,
         display: `browser`,
-        icon: `src/images/lucas.land.png`,
+        icon: `src/images/ll-logo.png`,
         localize: [
           {
             start_url: `/kr/`,
@@ -71,5 +73,6 @@ module.exports = {
     },
     `gatsby-transformer-json`,
     `gatsby-plugin-preload-fonts`,
+    `gatsby-plugin-transition-link`
   ],
 }

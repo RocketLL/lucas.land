@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from "react"
 
+import SEO from "./seo"
 import styles from "../scss/wrapper.module.scss"
 import "../scss/styles.global.scss"
 
@@ -20,11 +21,14 @@ const Wrapper = ({ children, pageContext: { locale, type }, location }) => {
   }, [])
 
   return (
-    <LocaleContext.Provider value={{ locale, location, type }}>
-      <ThemeContext.Provider value={{ dark, setDark }}>
-        <div className={`${styles.wrapper}`}>{children}</div>
-      </ThemeContext.Provider>
-    </LocaleContext.Provider>
+    <>
+      <SEO location={location} />
+      <LocaleContext.Provider value={{ locale, location, type }}>
+        <ThemeContext.Provider value={{ dark, setDark }}>
+          <div className={`${styles.wrapper}`}>{children}</div>
+        </ThemeContext.Provider>
+      </LocaleContext.Provider>
+    </>
   )
 }
 
