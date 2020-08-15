@@ -29,6 +29,10 @@ body {
   &.index {
     @include var(background, color-em);
   }
+
+  @media only screen and (max-width: $breakpoint-m) {
+    font-size: calc(100% * 5 / 6);
+  }
 }
 
 ::selection {
