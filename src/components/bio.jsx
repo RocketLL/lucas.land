@@ -75,7 +75,7 @@ const Mail = ({ to, className }) => {
     >
       {to}
       <animated.i className={styles.icon} style={props}>
-        <BsArrowUpRight size={"1.2rem"} />
+        <BsArrowUpRight size={"1.1em"} />
       </animated.i>
     </a>
   )

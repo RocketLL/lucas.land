@@ -46,7 +46,7 @@ const Links = () => {
       >
         {children}
         <animated.i className={styles.icon} style={springs[i]} >
-          <BsArrowUpRight size={"1.2rem"} />
+          <BsArrowUpRight size={"1.2em"} />
         </animated.i >
       </GatsbyLink> :
       <a
@@ -57,7 +57,7 @@ const Links = () => {
       >
         {children}
         <animated.i className={styles.icon} style={springs[i]} >
-          <BsArrowUpRight size={"1.2rem"} />
+          <BsArrowUpRight size={"1.2em"} />
         </animated.i>
       </a>
     )
