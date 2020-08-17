@@ -4,7 +4,10 @@
 html,
 body,
 #___gatsby,
-#gatsby-focus-wrapper {
+#gatsby-focus-wrapper,
+.tl-edges,
+.tl-wrapper
+{
   width: 100%;
   height: 100%;
 }
