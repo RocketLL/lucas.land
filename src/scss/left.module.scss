@@ -1,26 +1,23 @@
-/* autoprefixer grid: autoplace */
-
 @import "./variables.global.scss";
 
-.bio {
+.left {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
 
-  .logo {
-    margin-bottom: 7rem;
-  }
-
-  .name {
+  .title {
     font-weight: 700;
     font-size: 1.1em;
     margin: 0;
   }
 
-  .about {
+  .subtitle {
     font-size: 1.1em;
-    display: flex;
     @include var(color, color-sub);
+  }
+
+  a {
     text-decoration: none;
+    color: inherit;
   }
 }

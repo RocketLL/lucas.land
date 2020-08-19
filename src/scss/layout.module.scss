@@ -5,10 +5,11 @@ $width-left: 35vw;
 .layout {
   width: 100%;
   max-width: 90rem;
-  height: 100%;
+  // height: 100%;
   display: flex;
   flex-direction: column;
   font-family: $font-ss;
+  margin-top: 10em;
 
   .left {
     display: flex;
@@ -22,6 +23,7 @@ $width-left: 35vw;
       width: 100%;
       height: auto;
       position: relative;
+      padding: 0 10rem 0 10rem;
     }
 
     @media only screen and (max-width: $breakpoint-m) {
@@ -35,7 +37,7 @@ $width-left: 35vw;
     height: 100%;
     width: unquote("min(54rem, 60%)");
     margin-left: unquote("min(36rem, 40%)");
-    padding: 19rem 10rem 0 5rem;
+    padding: 10rem 10rem 0 5rem;
 
     @media only screen and (max-width: $breakpoint-l) {
       margin: 0;

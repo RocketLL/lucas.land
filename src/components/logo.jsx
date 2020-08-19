@@ -1,8 +1,7 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
-import styles from "../../src/scss/bio.module.scss"
+import styles from "../scss/logo.module.scss"
 import { LocaleContext } from "./wrapper"
-import { logo as logoStyle } from "../scss/logo.module.scss"
 import { useSpring, animated } from "react-spring"
 import { BsArrowUpRight } from "react-icons/bs"
 
@@ -22,7 +21,7 @@ const Logo = ({ className }) => {
   return (
     <Link
       to={"/"}
-      className={`${logoStyle} ${className}`}
+      className={`${styles.logo} ${className}`}
       onMouseEnter={() => set({
         transform: "translate(2500 0)",
         fillOpacity: 1,
@@ -50,51 +49,4 @@ const Logo = ({ className }) => {
   )
 }
 
-const Mail = ({ to, className }) => {
-  const [props, set] = useSpring(() => ({
-    transform: "translate(-1rem, 1rem)",
-    opacity: 0,
-    config: {
-      tension: 200,
-      friction: 20
-    }
-  }))
-
-  return (
-    <a
-      className={className}
-      href={`mailto:${to}`}
-      onMouseLeave={() => set({
-        transform: "translate(-1rem, 1rem)",
-        opacity: 0,
-      })}
-      onMouseEnter={() => set({
-        transform: "translate(0px, 0px)",
-        opacity: 1,
-      })}
-    >
-      {to}
-      <animated.i className={styles.icon} style={props}>
-        <BsArrowUpRight size={"1.1em"} />
-      </animated.i>
-    </a>
-  )
-}
-
-const Bio = () => {
-  const { locale } = useContext(LocaleContext)
-
-  return (
-    <div className={styles.bio}>
-      <Logo className={styles.logo} />
-      <h1 className={styles.name}>
-        {locale === "en" ? "Lucas Lee" : "Lucas Lee"}
-      </h1>
-      <Mail to={"me@lucas.land"} className={styles.about} />
-    </div>
-  )
-}
-
-export { Logo }
-
-export default Bio
+export default Logo

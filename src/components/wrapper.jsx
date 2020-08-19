@@ -1,11 +1,18 @@
 import React, { useState, useEffect, createContext } from "react"
 
 import SEO from "./seo"
+import Logo from "./logo"
 import styles from "../scss/wrapper.module.scss"
 import "../scss/styles.global.scss"
 
 const LocaleContext = createContext()
 const ThemeContext = createContext()
+
+const Header = () => (
+  <div className={styles.header}>
+    <Logo />
+  </div>
+)
 
 const Wrapper = ({ children, pageContext: { locale, type }, location }) => {
   const [dark, rawSetDark] = useState(false)
@@ -25,7 +32,10 @@ const Wrapper = ({ children, pageContext: { locale, type }, location }) => {
       <SEO location={location} />
       <LocaleContext.Provider value={{ locale, location, type }}>
         <ThemeContext.Provider value={{ dark, setDark }}>
-          <div className={`${styles.wrapper}`}>{children}</div>
+          <div className={`${styles.wrapper}`}>
+            <Header />
+            {children}
+          </div>
         </ThemeContext.Provider>
       </LocaleContext.Provider>
     </>

@@ -1,9 +1,10 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 
-import Bio from "../../src/components/bio"
 import Layout from "../../src/components/layout"
-import Right from "../../src/components/right"
+import Left from "./_left"
+import Right from "./_right"
+
 
 const Index = () => (
   <>
@@ -13,7 +14,7 @@ const Index = () => (
       }}
     />
     <Layout
-      left={<Bio />}
+      left={<Left />}
       right={<Right />}
     />
   </>

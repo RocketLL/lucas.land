@@ -1,0 +1,14 @@
+@import "./variables.global.scss";
+
+.link {
+  @include var(color, color-txt);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  line-height: 1.5;
+
+  .icon {
+    height: 1.1em;
+  }
+}
