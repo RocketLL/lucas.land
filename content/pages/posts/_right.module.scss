@@ -1,0 +1,25 @@
+@import "../../../src/scss/variables.global.scss";
+
+.right {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1em;
+
+  .desc {
+    margin: 0;
+    line-height: 1.5;
+    @include var(color, color-sub);
+
+    .emph {
+      @include var(color, color-txt);
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    flex-shrink: 1;
+    align-items: flex-start;
+  }
+}

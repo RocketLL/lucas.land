@@ -9,7 +9,7 @@ import { link, important } from "../../src/scss/text.module.scss"
 const PostLink = ({ post, locale }) => (
   <div className={styles.post}>
     <span className={styles.date}>{post.frontmatter.date}</span>
-    <Link className={`${styles.title} ${link} ${important}`} to={locale === "en" ? post.frontmatter.slug : `kr/${post.frontmatter.slug}`} >
+    <Link className={`${styles.title} ${link} ${important}`} to={locale === "en" ? "/post/" + post.frontmatter.slug : `kr/${post.frontmatter.slug}`} >
       {post.frontmatter.title}
     </Link>
   </div>
@@ -52,7 +52,6 @@ const Posts = () => {
 
   return (
     <>
-      <h2 className={header}>Posts</h2>
       <div>{posts[locale]}</div>
     </>
   )
