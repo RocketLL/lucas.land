@@ -4,7 +4,7 @@
   width: 2rem;
   height: 2rem;
   display: inline-block;
-  @include var(fill, color-txt);
+  @include var(fill, color-logo);
 
   svg {
     width: 8rem;

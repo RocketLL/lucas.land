@@ -27,14 +27,10 @@ body {
   margin: 0;
   @include var(background, color-bg);
   @include var(color, color-txt);
-  transition: background-color 0.1s;
+  transition: background-color 0.4s;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: $font-ss;
-
-  &.index {
-    @include var(background, color-em);
-  }
 
   @media only screen and (max-width: $breakpoint-m) {
     font-size: calc(100% * 5 / 6);
@@ -47,6 +43,7 @@ body {
 
 :root {
   --color-bg: #{map-get($colors, color-bg)};
+  --color-bg-trans: #{map-get($colors, color-bg-trans)};
   --color-txt: #{map-get($colors, color-txt)};
   --color-sub: #{map-get($colors, color-sub)};
   --color-hl1: #{map-get($colors, color-hl1)};
@@ -55,10 +52,13 @@ body {
   --color-hl2-a: #{map-get($colors, color-hl2-a)};
   --color-sel: #{map-get($colors, color-sel)};
   --color-em: #{map-get($colors, color-em)};
+  --color-logo: #{map-get($colors, color-logo)};
+  --color-white: #{map-get($colors, color-white)};
 }
 
-[theme="dark"] {
+body[theme="dark"] {
   --color-bg: #{map-get($colors-dark, color-bg)};
+  --color-bg-trans: #{map-get($colors-dark, color-bg-trans)};
   --color-txt: #{map-get($colors-dark, color-txt)};
   --color-sub: #{map-get($colors-dark, color-sub)};
   --color-hl1: #{map-get($colors-dark, color-hl1)};
@@ -66,5 +66,21 @@ body {
   --color-hl1-a: #{map-get($colors-dark, color-hl1-a)};
   --color-hl2-a: #{map-get($colors-dark, color-hl2-a)};
   --color-sel: #{map-get($colors-dark, color-sel)};
-  --color-em: #{map-get($colors, color-em)};
+  --color-em: #{map-get($colors-dark, color-em)};
+  --color-logo: #{map-get($colors-dark, color-logo)};
+  --color-white: #{map-get($colors, color-white)};
+}
+
+:root .index {
+  --color-logo: #{map-get($colors, color-white)};
+  --color-txt: #{map-get($colors, color-white)};
+  --color-sub: #{map-get($colors, color-white-sub)};
+  --color-bg: #{map-get($colors, color-em)};
+}
+
+body[theme="dark"].index {
+  --color-logo: #{map-get($colors, color-white)};
+  --color-txt: #{map-get($colors, color-white)};
+  --color-sub: #{map-get($colors-dark, color-white-sub)};
+  --color-bg: #{map-get($colors-dark, color-em)};
 }

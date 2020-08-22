@@ -8,11 +8,6 @@ import Right from "./_right"
 
 const Index = () => (
   <>
-    <Helmet
-      bodyAttributes={{
-        class: "index"
-      }}
-    />
     <Layout
       left={<Left />}
       right={<Right />}

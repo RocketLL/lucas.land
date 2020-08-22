@@ -14,6 +14,41 @@
     padding: 10rem 10rem 0 10rem;
     position: fixed;
     z-index: 99;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &.sticky {
+      backdrop-filter: blur(1rem);
+      transition: background 0.4s;
+      background-color: var(--color-bg-trans-50);
+
+      @supports not (backdrop-filter: blur(1px)) {
+        background-color: var(--color-bg-trans-90);
+      }
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+
+      .icon {
+        @include var(stroke, color-txt);
+        @include var(fill, color-bg);
+        fill: transparent;
+        transition: fill 0.3s, stroke 0.3s;
+
+        &:hover {
+          @include var(fill, color-txt);
+        }
+      }
+
+      @media only screen and (max-width: $breakpoint-l) {
+        opacity: 1 !important;
+        pointer-events: all !important;
+      }
+    }
 
     @media only screen and (max-width: $breakpoint-l) {
       width: 100%;
@@ -21,13 +56,22 @@
       position: sticky;
       padding: 0.5rem 10rem;
       margin-top: 10rem;
-      backdrop-filter: blur(1rem);
-      background: #00000044;
-      top: 0;
+      top: -1px;
+      border-top: 1px solid transparent;
     }
 
     @media only screen and (max-width: $breakpoint-m) {
       padding: 0.5rem 3rem;
     }
   }
+}
+
+:global body[theme="dark"] :local .sticky {
+  --color-bg-trans-50: #00000080;
+  --color-bg-trans-90: #000000e6;
+}
+
+:global :root :local .sticky {
+  --color-bg-trans-90: #ffffff80;
+  --color-bg-trans-90: #ffffffe6;
 }
