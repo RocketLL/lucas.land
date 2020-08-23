@@ -89,4 +89,5 @@ const Wrapper = ({ children, pageContext: { locale, type }, location }) => {
   )
 }
 
-export { Wrapper, LocaleContext, ThemeContext }
+export { LocaleContext, ThemeContext }
+export default Wrapper
