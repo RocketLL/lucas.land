@@ -1,10 +1,8 @@
 import React, { useContext } from "react"
-import { Link } from "gatsby"
 import styles from "../scss/logo.module.scss"
-import { LocaleContext } from "./wrapper"
 import { useSpring, animated } from "react-spring"
-import { BsArrowUpRight } from "react-icons/bs"
-
+import Link from "./link"
+import { springConfig } from "./configs"
 
 const Logo = ({ className, color }) => {
   const [props, set] = useSpring(() => ({
@@ -13,11 +11,9 @@ const Logo = ({ className, color }) => {
     from: {
       fillOpacity: 0, transform: "translate(5000 0)",
     },
-    config: {
-      tension: 200,
-      friction: 20
-    }
+    config: springConfig
   }))
+
   return (
     <Link
       to={"/"}
@@ -30,10 +26,12 @@ const Logo = ({ className, color }) => {
         transform: "translate(2000 0)",
         fillOpacity: 1,
       })}
-      onMouseDown={() => set({
-        transform: "translate(6000 0)",
-        fillOpacity: 0,
-      })}
+      // onMouseDown={() => set({
+      //   transform: "translate(6000 0)",
+      //   fillOpacity: 0,
+      // })}
+      animated={false}
+      styled={false}
     >
       <animated.svg
         version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -45,7 +43,7 @@ const Logo = ({ className, color }) => {
 			44.37,1667.05 462.13,1763.5 462.13,1763.5 1229.74,1940.71"/>
         </animated.g>
       </animated.svg>
-    </Link >
+    </Link>
   )
 }
 

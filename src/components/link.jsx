@@ -1,55 +1,55 @@
 import React from "react"
 import styles from "../scss/link.module.scss"
 import { BsArrowUpRight } from "react-icons/bs"
-import { useSpring, animated } from "react-spring"
+import { useSpring, animated as ani } from "react-spring"
 import { LayoutLink } from "./layout"
+import { springConfig } from "./configs"
 
-const Link = ({ children, to, size, className }) => {
-  const [props, set] = useSpring(() => ({
+const Link = ({ children, to, size = "1em", className, onMouseEnter, onMouseLeave, animated = true, styled = true, ...props }) => {
+  const internal = /^\/(?!\/)/.test(to)
+
+  const [spring, set] = useSpring(() => ({
     transform: "translate(-1rem, 1rem)",
     opacity: 0,
-    config: {
-      tension: 200,
-      friction: 20
-    }
+    config: springConfig
   }))
-
-  const internal = /^\/(?!\/)/.test(to)
 
   return (internal ?
     <LayoutLink
-      className={`${className} ${styles.link}`}
+      className={`${className} ${styled ? styles.link : null}`}
       to={to}
-      onMouseLeave={() => set({
+      onMouseLeave={animated ? () => set({
         transform: "translate(-1rem, 1rem)",
         opacity: 0,
-      })}
-      onMouseEnter={() => set({
+      }) : onMouseLeave}
+      onMouseEnter={animated ? () => set({
         transform: "translate(0px, 0px)",
         opacity: 1,
-      })}
+      }) : onMouseEnter}
+      {...props}
     >
       {children}
-      <animated.i className={styles.icon} style={props} >
+      {animated && <ani.i className={styles.icon} style={spring}>
         <BsArrowUpRight size={size} />
-      </animated.i >
+      </ani.i>}
     </LayoutLink> :
     <a
-      className={`${className} ${styles.link}`}
+      className={`${className} ${styled ? styles.link : null}`}
       href={to}
-      onMouseLeave={() => set({
+      onMouseLeave={animated ? () => set({
         transform: "translate(-1rem, 1rem)",
         opacity: 0,
-      })}
-      onMouseEnter={() => set({
+      }) : onMouseLeave}
+      onMouseEnter={animated ? () => set({
         transform: "translate(0px, 0px)",
         opacity: 1,
-      })}
+      }) : onMouseEnter}
+      {...props}
     >
       {children}
-      <animated.i className={styles.icon} style={props} >
+      {animated && <ani.i className={styles.icon} style={spring}>
         <BsArrowUpRight size={size} />
-      </animated.i>
+      </ani.i>}
     </a>
   )
 }

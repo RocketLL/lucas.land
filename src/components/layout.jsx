@@ -4,7 +4,6 @@ import { Spring, animated } from 'react-spring'
 import TransitionLink, { TransitionState } from 'gatsby-plugin-transition-link'
 
 import styles from "../scss/layout.module.scss"
-import { link as linkStyle } from "../scss/link.module.scss"
 
 const LeftState = ({ children }) => (
   <TransitionState>
@@ -25,7 +24,7 @@ const LeftState = ({ children }) => (
         </Spring>
       )
     }}
-  </TransitionState >
+  </TransitionState>
 )
 
 const RightState = ({ children }) => (
@@ -48,12 +47,12 @@ const RightState = ({ children }) => (
         </Spring>
       )
     }}
-  </TransitionState >
+  </TransitionState>
 )
 
 
 const LayoutLink = ({ to, children, className, ...props }) => (
-  <TransitionLink to={to} exit={{ length: 0.5 }} entry={{ length: 0.5 }} className={`${className} ${linkStyle}`} {...props}>
+  <TransitionLink to={to} exit={{ length: 0.5, state: { msg: "exit" } }} entry={{ length: 0.5, state: { msg: "exit" } }} className={className} {...props}>
     {children}
   </TransitionLink>
 )
