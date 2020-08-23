@@ -10,7 +10,7 @@ const Index = () => (
   <>
     <Helmet
       bodyAttributes={{
-        class: "index"
+        class: "index home"
       }}
     />
     <Layout
