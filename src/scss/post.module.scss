@@ -23,6 +23,20 @@
     margin: 1.5rem 0;
   }
 
+  h2 {
+    font-size: 1.2em;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+
+  hr {
+    @include var(color, color-sub);
+  }
+
   strong {
     box-sizing: content-box;
     padding: 0.1em;

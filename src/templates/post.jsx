@@ -7,7 +7,6 @@ import styles from "../scss/post.module.scss"
 import Layout from "../components/layout"
 import Left from "../components/left"
 
-
 import "../scss/syntax.global.scss"
 import "katex/dist/katex.min.css"
 
@@ -15,7 +14,7 @@ const shortcodes = { Link }
 
 const PostTemplate = ({ data: { mdx } }) => (
   <Layout
-    left={<Left title={mdx.frontmatter.title} subtitle={mdx.frontmatter.title} />}
+    left={<Left title={mdx.frontmatter.title} subtitle={mdx.frontmatter.subtitle} />}
     right={
       <div className={`${styles.post} ${mdx.fields.locale}`}>
         <MDXProvider components={shortcodes}>
@@ -31,7 +30,8 @@ export const pageQuery = graphql`
       id
       body
       frontmatter {
-        title
+        title,
+        subtitle
       }
       fields {
         locale

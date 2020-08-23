@@ -11,5 +11,15 @@
     height: 2rem;
     margin-left: -2rem;
     pointer-events: none;
+
+    @media only screen and (max-width: $breakpoint-m) {
+      width: 6.8rem;
+      height: 1.7rem;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-m) {
+    width: 1.7rem;
+    height: 1.7rem;
   }
 }

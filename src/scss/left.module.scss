@@ -9,6 +9,10 @@
     font-weight: 700;
     font-size: 1em;
     margin: 0;
+
+    @media only screen and (max-width: $breakpoint-l) {
+      font-size: 1.3em;
+    }
   }
 
   .subtitle {
@@ -20,4 +24,8 @@
     text-decoration: none;
     color: inherit;
   }
+}
+
+:global .index :local .left .title {
+  font-size: 1em;
 }
