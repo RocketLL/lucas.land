@@ -35,7 +35,6 @@
 
       .icon {
         @include var(stroke, color-txt);
-        @include var(fill, color-bg);
         fill: transparent;
         transition: fill 0.3s, stroke 0.3s;
 
@@ -74,4 +73,23 @@
 :global :root :local .sticky {
   --color-bg-trans-90: #ffffff80;
   --color-bg-trans-90: #ffffffe6;
+}
+
+:global body.index :local .icon {
+  @include var(stroke, color-txt);
+  @include var(fill, color-txt);
+  transition: fill 0.3s, stroke 0.3s;
+
+  &:hover {
+    fill: transparent;
+  }
+}
+
+:global body.index:not([theme="dark"]) :local .wrapper .header .theme-toggle .icon {
+  @include var(stroke, color-txt);
+  @include var(fill, color-txt);
+
+  &:hover {
+    fill: transparent;
+  }
 }
