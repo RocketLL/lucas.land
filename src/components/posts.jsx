@@ -1,15 +1,22 @@
 import React, { useContext } from "react"
-import { graphql, useStaticQuery, Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import { LocaleContext } from "./wrapper"
 
 import styles from "../../src/scss/posts.module.scss"
-import { header } from "../../src/scss/layout.module.scss"
 import { link, important } from "../../src/scss/text.module.scss"
+
+import Link from "./link"
 
 const PostLink = ({ post, locale }) => (
   <div className={styles.post}>
-    <span className={styles.date}>{post.frontmatter.date}</span>
-    <Link className={`${styles.title} ${link} ${important}`} to={locale === "en" ? "/post/" + post.frontmatter.slug : `kr/${post.frontmatter.slug}`} >
+    <span className={styles.meta}>
+      {post.frontmatter.date}
+      <span className={styles.sep}></span>
+      {post.frontmatter.tags}
+    </span>
+    <Link
+      className={`${styles.title} ${styles.link}`}
+      to={locale === "en" ? "/post/" + post.frontmatter.slug : `kr/${post.frontmatter.slug}`} >
       {post.frontmatter.title}
     </Link>
   </div>
@@ -33,6 +40,7 @@ const Posts = () => {
                 date(formatString: "YYYY/MM/DD")
                 slug
                 title
+                tags
               }
             }
           }

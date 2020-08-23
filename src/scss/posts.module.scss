@@ -6,14 +6,27 @@
   align-items: flex-start;
   margin: 0 0 2em 0;
 
-  .date {
+  .meta {
     font-variant-numeric: tabular-nums;
     @include var(color, color-sub);
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .sep {
+      @include var(border-right, color-sub, 2px solid);
+      @include var(border-top, color-sub, 2px solid);
+      width: 1px;
+      height: 1px;
+      margin: 0 0.5em;
+    }
   }
 
   .title {
-    font-size: 1.2em;
+    font-size: 1em;
     flex-shrink: 1;
     font-weight: 500;
+    @include var(color, color-txt);
   }
 }

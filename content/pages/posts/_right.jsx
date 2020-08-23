@@ -23,7 +23,6 @@ const Right = () => {
       <p className={styles.desc}>
         <Posts />
       </p>
-      <Links />
     </div>
   )
 }
