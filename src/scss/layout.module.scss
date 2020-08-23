@@ -26,7 +26,7 @@ $width-left: 35vw;
     position: fixed;
     height: 100%;
     width: unquote("min(31.5rem, 35%)");
-    padding: 10rem 10rem 0 10rem;
+    padding: 10rem 0 0 10rem;
 
     @media only screen and (max-width: $breakpoint-l) {
       width: 100%;
