@@ -2,7 +2,7 @@ import React from "react"
 import styles from "../scss/link.module.scss"
 import { BsArrowUpRight } from "react-icons/bs"
 import { useSpring, animated } from "react-spring"
-import { Link as GatsbyLink } from "gatsby"
+import { LayoutLink } from "./layout"
 
 const Link = ({ children, to, size, className }) => {
   const [props, set] = useSpring(() => ({
@@ -17,7 +17,7 @@ const Link = ({ children, to, size, className }) => {
   const internal = /^\/(?!\/)/.test(to)
 
   return (internal ?
-    <GatsbyLink
+    <LayoutLink
       className={`${className} ${styles.link}`}
       to={to}
       onMouseLeave={() => set({
@@ -33,7 +33,7 @@ const Link = ({ children, to, size, className }) => {
       <animated.i className={styles.icon} style={props} >
         <BsArrowUpRight size={size} />
       </animated.i >
-    </GatsbyLink> :
+    </LayoutLink> :
     <a
       className={`${className} ${styles.link}`}
       href={to}

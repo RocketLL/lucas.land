@@ -52,8 +52,8 @@ const RightState = ({ children }) => (
 )
 
 
-const LayoutLink = ({ to, children }) => (
-  <TransitionLink to={to} exit={{ length: 0.5 }} entry={{ length: 0.5 }} className={linkStyle}>
+const LayoutLink = ({ to, children, className, ...props }) => (
+  <TransitionLink to={to} exit={{ length: 0.5 }} entry={{ length: 0.5 }} className={`${className} ${linkStyle}`} {...props}>
     {children}
   </TransitionLink>
 )

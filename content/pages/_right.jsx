@@ -2,12 +2,11 @@ import React, { useContext } from "react"
 import styles from "./_right.module.scss"
 import { LocaleContext } from "../../src/components/wrapper"
 import Link from "../../src/components/link"
-import { LayoutLink } from "../../src/components/layout"
 
 const Links = () => {
   return (
     <div className={styles.links}>
-      <LayoutLink to={"/posts"}>posts</LayoutLink>
+      <Link to={"/posts"}>posts</Link>
       <Link to={"https://github.com/rocketll"} i={1}>github</Link>
       <Link to={"https://behance.net/rocketll"} i={2}>behance</Link>
     </div >
