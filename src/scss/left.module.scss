@@ -7,12 +7,12 @@
 
   .title {
     font-weight: 700;
-    font-size: 1.1em;
+    font-size: 1em;
     margin: 0;
   }
 
   .subtitle {
-    font-size: 1.1em;
+    font-size: 1em;
     @include var(color, color-sub);
   }
 
