@@ -8,7 +8,7 @@ $width-left: 35vw;
   display: flex;
   flex-direction: column;
   font-family: $font-ss;
-  margin-top: 10em;
+  margin: 10rem auto 0 auto;
 
   @media only screen and (max-width: $breakpoint-l) {
     margin: 0;
