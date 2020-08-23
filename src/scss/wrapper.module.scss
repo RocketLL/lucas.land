@@ -50,16 +50,16 @@
     }
 
     @media only screen and (max-width: $breakpoint-l) {
-      width: 100%;
       height: auto;
       position: sticky;
       padding: 0.5rem 10rem;
-      margin-top: 10rem;
+      margin: 10rem 0;
       top: -1px;
       border-top: 1px solid transparent;
     }
 
     @media only screen and (max-width: $breakpoint-m) {
+      margin: 3rem 0 6rem 0;
       padding: 0.5rem 3rem;
     }
   }
@@ -85,7 +85,13 @@
   }
 }
 
-:global body.index:not([theme="dark"]) :local .wrapper .header .theme-toggle .icon {
+:global
+  body.index:not([theme="dark"])
+  :local
+  .wrapper
+  .header
+  .theme-toggle
+  .icon {
   @include var(stroke, color-txt);
   @include var(fill, color-txt);
 
