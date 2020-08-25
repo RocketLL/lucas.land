@@ -1,10 +1,7 @@
-import React, { useContext } from "react"
+import React from "react"
 import styles from "../scss/left.module.scss"
-import { LocaleContext } from "./wrapper"
 
 const Left = ({ title, subtitle, className }) => {
-  const { locale } = useContext(LocaleContext)
-
   return (
     <div className={`${className} ${styles.left}`}>
       <h1 className={styles.title}>{title}</h1>
