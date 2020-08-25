@@ -11,7 +11,7 @@ const Links = () => {
       <LayoutLink to={"/"}>home</LayoutLink>
       <Link to={"https://github.com/rocketll"}>github</Link>
       <Link to={"https://behance.net/rocketll"}>behance</Link>
-    </div >
+    </div>
   )
 }
 

@@ -10,44 +10,53 @@ const Link = ({ children, to, size, className }) => {
     opacity: 0,
     config: {
       tension: 200,
-      friction: 20
-    }
+      friction: 20,
+    },
   }))
 
   const internal = /^\/(?!\/)/.test(to)
 
-  return (internal ?
+  return internal ? (
     <LayoutLink
       className={`${className} ${styles.link}`}
       to={to}
-      onMouseLeave={() => set({
-        transform: "translate(-1rem, 1rem)",
-        opacity: 0,
-      })}
-      onMouseEnter={() => set({
-        transform: "translate(0px, 0px)",
-        opacity: 1,
-      })}
+      onMouseLeave={() =>
+        set({
+          transform: "translate(-1rem, 1rem)",
+          opacity: 0,
+        })
+      }
+      onMouseEnter={() =>
+        set({
+          transform: "translate(0px, 0px)",
+          opacity: 1,
+        })
+      }
     >
       {children}
-      <animated.i className={styles.icon} style={props} >
+      <animated.i className={styles.icon} style={props}>
         <BsArrowUpRight size={size} />
-      </animated.i >
-    </LayoutLink> :
+      </animated.i>
+    </LayoutLink>
+  ) : (
     <a
       className={`${className} ${styles.link}`}
       href={to}
-      onMouseLeave={() => set({
-        transform: "translate(-1rem, 1rem)",
-        opacity: 0,
-      })}
-      onMouseEnter={() => set({
-        transform: "translate(0px, 0px)",
-        opacity: 1,
-      })}
+      onMouseLeave={() =>
+        set({
+          transform: "translate(-1rem, 1rem)",
+          opacity: 0,
+        })
+      }
+      onMouseEnter={() =>
+        set({
+          transform: "translate(0px, 0px)",
+          opacity: 1,
+        })
+      }
     >
       {children}
-      <animated.i className={styles.icon} style={props} >
+      <animated.i className={styles.icon} style={props}>
         <BsArrowUpRight size={size} />
       </animated.i>
     </a>

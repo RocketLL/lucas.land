@@ -1,7 +1,7 @@
 import React from "react"
 
-import { Spring, animated } from 'react-spring'
-import TransitionLink, { TransitionState } from 'gatsby-plugin-transition-link'
+import { Spring, animated } from "react-spring"
+import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
 
 import styles from "../scss/layout.module.scss"
 import { link as linkStyle } from "../scss/link.module.scss"
@@ -15,7 +15,7 @@ const LeftState = ({ children }) => (
       return (
         <Spring
           to={{
-            opacity: mount ? 1 : 0
+            opacity: mount ? 1 : 0,
           }}
           config={{
             duration: seconds * 1000,
@@ -25,7 +25,7 @@ const LeftState = ({ children }) => (
         </Spring>
       )
     }}
-  </TransitionState >
+  </TransitionState>
 )
 
 const RightState = ({ children }) => (
@@ -38,7 +38,7 @@ const RightState = ({ children }) => (
         <Spring
           to={{
             // transform: mount ? "translateX(0px)" : "translateX(-100px)",
-            opacity: mount ? 1 : 0
+            opacity: mount ? 1 : 0,
           }}
           config={{
             duration: seconds * 1000,
@@ -48,12 +48,17 @@ const RightState = ({ children }) => (
         </Spring>
       )
     }}
-  </TransitionState >
+  </TransitionState>
 )
 
-
 const LayoutLink = ({ to, children, className, ...props }) => (
-  <TransitionLink to={to} exit={{ length: 0.5 }} entry={{ length: 0.5 }} className={`${className} ${linkStyle}`} {...props}>
+  <TransitionLink
+    to={to}
+    exit={{ length: 0.5 }}
+    entry={{ length: 0.5 }}
+    className={`${className} ${linkStyle}`}
+    {...props}
+  >
     {children}
   </TransitionLink>
 )

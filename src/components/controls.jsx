@@ -15,11 +15,12 @@ const Controls = () => {
         <ThemeToggler />
       </div>
     )
-  else return (
-    <div className={styles.controls}>
-      <ThemeToggler />
-    </div>
-  )
+  else
+    return (
+      <div className={styles.controls}>
+        <ThemeToggler />
+      </div>
+    )
 }
 
 export default Controls

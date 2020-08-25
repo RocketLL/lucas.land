@@ -5,18 +5,14 @@ import Layout from "../../src/components/layout"
 import Left from "./_left"
 import Right from "./_right"
 
-
 const Index = () => (
   <>
     <Helmet
       bodyAttributes={{
-        class: "index"
+        class: "index",
       }}
     />
-    <Layout
-      left={<Left />}
-      right={<Right />}
-    />
+    <Layout left={<Left />} right={<Right />} />
   </>
 )
 

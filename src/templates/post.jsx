@@ -14,13 +14,16 @@ const shortcodes = { Link }
 
 const PostTemplate = ({ data: { mdx } }) => (
   <Layout
-    left={<Left title={mdx.frontmatter.title} subtitle={mdx.frontmatter.subtitle} />}
+    left={
+      <Left title={mdx.frontmatter.title} subtitle={mdx.frontmatter.subtitle} />
+    }
     right={
       <div className={`${styles.post} ${mdx.fields.locale}`}>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
-      </div>}
+      </div>
+    }
   />
 )
 
@@ -30,7 +33,7 @@ export const pageQuery = graphql`
       id
       body
       frontmatter {
-        title,
+        title
         subtitle
       }
       fields {
