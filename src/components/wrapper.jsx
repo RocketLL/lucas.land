@@ -40,7 +40,7 @@ const ThemeToggle = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
-  }, [])
+  }, [set])
 
   return (
     <animated.i

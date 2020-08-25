@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import { LocaleContext } from "./wrapper"
 
 import styles from "../../src/scss/posts.module.scss"
-import { link, important } from "../../src/scss/text.module.scss"
 
 import Link from "./link"
 

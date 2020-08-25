@@ -1,11 +1,10 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Helmet } from "react-helmet"
 
 import Layout from "../../src/components/layout"
 import Link from "../../src/components/link"
 import styles from "./_right.module.scss"
 import LeftTemplate from "../../src/components/left"
-import { LocaleContext } from "../../src/components/wrapper"
 
 const Left = () => (
   <LeftTemplate
@@ -19,8 +18,6 @@ const Left = () => (
 )
 
 const Links = () => {
-  const { locale } = useContext(LocaleContext)
-
   return (
     <>
       <div className={styles.links}>
