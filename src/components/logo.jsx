@@ -1,11 +1,13 @@
 import React, { useContext } from "react"
-import { Link } from "gatsby"
 import styles from "../scss/logo.module.scss"
-import { LocaleContext } from "./wrapper"
 import { useSpring, animated } from "react-spring"
-import { BsArrowUpRight } from "react-icons/bs"
+import Link from "./link"
+import { LocaleContext } from "./wrapper"
+import { springConfig } from "./configs"
 
 const Logo = ({ className, color }) => {
+  const { locale } = useContext(LocaleContext)
+
   const [props, set] = useSpring(() => ({
     transform: "translate(2000 0)",
     fillOpacity: 1,
@@ -13,14 +15,12 @@ const Logo = ({ className, color }) => {
       fillOpacity: 0,
       transform: "translate(5000 0)",
     },
-    config: {
-      tension: 200,
-      friction: 20,
-    },
+    config: springConfig,
   }))
+
   return (
     <Link
-      to={"/"}
+      to={locale === "en" ? "/" : "/kr"}
       className={`${styles.logo} ${className}`}
       onMouseEnter={() =>
         set({
@@ -34,12 +34,12 @@ const Logo = ({ className, color }) => {
           fillOpacity: 1,
         })
       }
-      onMouseDown={() =>
-        set({
-          transform: "translate(6000 0)",
-          fillOpacity: 0,
-        })
-      }
+      // onMouseDown={() => set({
+      //   transform: "translate(6000 0)",
+      //   fillOpacity: 0,
+      // })}
+      animated={false}
+      styled={false}
     >
       <animated.svg
         version="1.1"

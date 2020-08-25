@@ -32,7 +32,7 @@ const Index = () => (
   <>
     <Helmet
       bodyAttributes={{
-        class: "index",
+        class: "index kr",
       }}
     />
     <Layout left={<Left />} right={<Right />} />

@@ -13,11 +13,13 @@ exports.onCreatePage = ({ page, actions }) => {
   deletePage(page)
 
   const pageName = path.basename(page.path, ".kr")
-  const pagePath = pageName === "index" ? "/" : pageName
-  const lang =
-    removeTrailingSlash(page.path).split(".").pop() === "kr" ? "kr" : "en"
+  const pagePath = pageName === "index" ? path.dirname(page.path) : pageName
+  // const lang =
+  // removeTrailingSlash(page.path).split(".").pop() === "kr" ? "kr" : "en"
+  const lang = path.extname(page.path) ? "kr" : "en"
+
   const localizedPath =
-    lang === "en" ? page.path : `${locales.kr.path}/${pagePath}`
+    lang === "en" ? page.path : `${locales.kr.path}${pagePath}/`
 
   console.log(localizedPath)
 
@@ -96,7 +98,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const isDefault = post.fields.isDefault
 
     createPage({
-      path: `post${localizedSlug({ isDefault, locale, slug })}`,
+      path: localizedSlug({ isDefault, locale, slug }),
       component: postTemplate,
       context: {
         id: post.id,

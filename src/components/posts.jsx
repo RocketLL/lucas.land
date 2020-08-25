@@ -19,7 +19,7 @@ const PostLink = ({ post, locale }) => (
       to={
         locale === "en"
           ? "/post/" + post.frontmatter.slug
-          : `kr/${post.frontmatter.slug}`
+          : `/kr/post/${post.frontmatter.slug}`
       }
     >
       {post.frontmatter.title}

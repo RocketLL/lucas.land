@@ -54,6 +54,7 @@ body {
   --color-em: #{map-get($colors, color-em)};
   --color-logo: #{map-get($colors, color-logo)};
   --color-white: #{map-get($colors, color-white)};
+  --color-sub-sub: #{map-get($colors, color-sub-sub)};
 }
 
 body[theme="dark"] {
@@ -69,12 +70,14 @@ body[theme="dark"] {
   --color-em: #{map-get($colors-dark, color-em)};
   --color-logo: #{map-get($colors-dark, color-logo)};
   --color-white: #{map-get($colors, color-white)};
+  --color-sub-sub: #{map-get($colors-dark, color-sub-sub)};
 }
 
 :root .index {
   --color-logo: #{map-get($colors, color-white)};
   --color-txt: #{map-get($colors, color-white)};
   --color-sub: #{map-get($colors, color-white-sub)};
+  --color-sub-sub: #{map-get($colors, color-white-sub-sub)};
   --color-bg: #{map-get($colors, color-em)};
 }
 
@@ -82,5 +85,6 @@ body[theme="dark"].index {
   --color-logo: #{map-get($colors, color-white)};
   --color-txt: #{map-get($colors, color-white)};
   --color-sub: #{map-get($colors-dark, color-white-sub)};
+  --color-sub-sub: #{map-get($colors-dark, color-white-sub-sub)};
   --color-bg: #{map-get($colors-dark, color-em)};
 }
