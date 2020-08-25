@@ -15,7 +15,7 @@ exports.onCreatePage = ({ page, actions }) => {
   const pageName = path.basename(page.path, ".kr")
   const pagePath = pageName === "index" ? path.dirname(page.path) : pageName
   // const lang =
-    // removeTrailingSlash(page.path).split(".").pop() === "kr" ? "kr" : "en"
+  // removeTrailingSlash(page.path).split(".").pop() === "kr" ? "kr" : "en"
   const lang = path.extname(page.path) ? "kr" : "en"
 
   const localizedPath =

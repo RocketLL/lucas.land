@@ -4,7 +4,7 @@ module.exports = {
     description: `Website of Lucas Lee.`,
     author: `Lucas Lee`,
     url: `https://lucas.land/`,
-    image: `/card.png`
+    image: `/card.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -73,6 +73,6 @@ module.exports = {
     },
     `gatsby-transformer-json`,
     `gatsby-plugin-preload-fonts`,
-    `gatsby-plugin-transition-link`
+    `gatsby-plugin-transition-link`,
   ],
 }

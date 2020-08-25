@@ -1,4 +1,10 @@
-import React, { useState, useEffect, createContext, useContext, useRef } from "react"
+import React, {
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+  useRef,
+} from "react"
 import { useSpring, animated } from "react-spring"
 import SEO from "./seo"
 import Logo from "./logo"
@@ -26,15 +32,15 @@ const ThemeToggle = () => {
   useEffect(() => {
     const handleScroll = () => {
       set({
-        opacity: window.pageYOffset > 100 ? 0 : 1, pointerEvents: window.pageYOffset > 100 ? "none" : "all"
+        opacity: window.pageYOffset > 100 ? 0 : 1,
+        pointerEvents: window.pageYOffset > 100 ? "none" : "all",
       })
     }
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
     <animated.i
@@ -44,8 +50,14 @@ const ThemeToggle = () => {
       style={props}
     >
       {
-        <svg height="1.2rem" width="1.2rem" >
-          <circle className={styles.icon} cx="0.6rem" cy="0.6rem" r="0.5rem" strokeWidth="3" />
+        <svg height="1.2rem" width="1.2rem">
+          <circle
+            className={styles.icon}
+            cx="0.6rem"
+            cy="0.6rem"
+            r="0.5rem"
+            strokeWidth="3"
+          />
         </svg>
       }
     </animated.i>
@@ -61,18 +73,19 @@ const Wrapper = ({ children, pageContext: { locale, type }, location }) => {
     localStorage.setItem("dark", val ? "true" : "false")
   }
 
-  const el = useRef(null);
+  const el = useRef(null)
 
   useEffect(() => {
     rawSetDark(document.body.getAttribute("theme") === "dark")
 
-    const observer = new IntersectionObserver(([e]) =>
-      e.target.classList.toggle(styles.sticky, e.intersectionRatio < 1),
-      { threshold: [1] })
+    const observer = new IntersectionObserver(
+      ([e]) =>
+        e.target.classList.toggle(styles.sticky, e.intersectionRatio < 1),
+      { threshold: [1] }
+    )
 
     observer.observe(el.current)
   }, [])
-
 
   return (
     <>

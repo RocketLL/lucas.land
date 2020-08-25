@@ -16,7 +16,12 @@ const PostLink = ({ post, locale }) => (
     </span>
     <Link
       className={`${styles.title} ${styles.link}`}
-      to={locale === "en" ? "/post/" + post.frontmatter.slug : `/kr/post/${post.frontmatter.slug}`} >
+      to={
+        locale === "en"
+          ? "/post/" + post.frontmatter.slug
+          : `/kr/post/${post.frontmatter.slug}`
+      }
+    >
       {post.frontmatter.title}
     </Link>
   </div>
@@ -28,7 +33,7 @@ const Posts = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allMdx(sort: {order: DESC, fields: frontmatter___date}) {
+        allMdx(sort: { order: DESC, fields: frontmatter___date }) {
           edges {
             node {
               id
@@ -44,19 +49,35 @@ const Posts = () => {
               }
             }
           }
-        } 
+        }
       }
     `
   )
   const posts = {}
 
   posts.kr = data.allMdx.edges
-    .filter(post => !!post.node.frontmatter.date && post.node.fields.locale === "kr")
-    .map(post => <PostLink key={post.node.id} post={post.node} locale={post.node.fields.locale} />)
+    .filter(
+      post => !!post.node.frontmatter.date && post.node.fields.locale === "kr"
+    )
+    .map(post => (
+      <PostLink
+        key={post.node.id}
+        post={post.node}
+        locale={post.node.fields.locale}
+      />
+    ))
 
   posts.en = data.allMdx.edges
-    .filter(post => !!post.node.frontmatter.date && post.node.fields.locale === "en")
-    .map(post => <PostLink key={post.node.id} post={post.node} locale={post.node.fields.locale} />)
+    .filter(
+      post => !!post.node.frontmatter.date && post.node.fields.locale === "en"
+    )
+    .map(post => (
+      <PostLink
+        key={post.node.id}
+        post={post.node}
+        locale={post.node.fields.locale}
+      />
+    ))
 
   return (
     <>

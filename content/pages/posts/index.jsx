@@ -8,8 +8,14 @@ import styles from "./_right.module.scss"
 import Posts from "../../../src/components/posts"
 
 const Left = () => (
-  <LeftTemplate title="Posts"
-    subtitle={<Link to="mailto:me@lucas.land" size="1em">me@lucas.land</Link>} />
+  <LeftTemplate
+    title="Posts"
+    subtitle={
+      <Link to="mailto:me@lucas.land" size="1em">
+        me@lucas.land
+      </Link>
+    }
+  />
 )
 
 const Right = () => {
@@ -26,13 +32,10 @@ const Index = () => (
   <>
     <Helmet
       bodyAttributes={{
-        class: "index"
+        class: "index",
       }}
     />
-    <Layout
-      left={<Left />}
-      right={<Right />}
-    />
+    <Layout left={<Left />} right={<Right />} />
   </>
 )
 

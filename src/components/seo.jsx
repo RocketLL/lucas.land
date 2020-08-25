@@ -5,7 +5,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import { useLocation } from "@reach/router"
 
 function SEO({ location: { pathname } }) {
-  const { site: { siteMetadata: { title, description, author, image, url } } } = useStaticQuery(
+  const {
+    site: {
+      siteMetadata: { title, description, author, image, url },
+    },
+  } = useStaticQuery(
     graphql`
       query {
         site {
@@ -36,7 +40,7 @@ function SEO({ location: { pathname } }) {
         },
         {
           property: `og:image`,
-          content: image
+          content: image,
         },
         {
           property: `og:description`,
@@ -48,12 +52,11 @@ function SEO({ location: { pathname } }) {
         },
         {
           property: `og:url`,
-          content: `${url}${pathname.replace(/^\/|\/$/g, "")}`
-        }
+          content: `${url}${pathname.replace(/^\/|\/$/g, "")}`,
+        },
       ]}
     />
   )
 }
-
 
 export default SEO

@@ -8,8 +8,14 @@ import LeftTemplate from "../../src/components/left"
 import { LocaleContext } from "../../src/components/wrapper"
 
 const Left = () => (
-  <LeftTemplate title="Lucas Lee"
-    subtitle={<Link to="mailto:me@lucas.land" size="1em">me@lucas.land</Link>} />
+  <LeftTemplate
+    title="Lucas Lee"
+    subtitle={
+      <Link to="mailto:me@lucas.land" size="1em">
+        me@lucas.land
+      </Link>
+    }
+  />
 )
 
 const Links = () => {
@@ -18,9 +24,15 @@ const Links = () => {
   return (
     <>
       <div className={styles.links}>
-        <Link className={styles.link} to={"/posts"}>posts</Link>
-        <Link className={styles.link} to={"https://github.com/rocketll"}>github</Link>
-        <Link className={styles.link} to={"https://behance.net/rocketll"}>behance</Link>
+        <Link className={styles.link} to={"/posts"}>
+          posts
+        </Link>
+        <Link className={styles.link} to={"https://github.com/rocketll"}>
+          github
+        </Link>
+        <Link className={styles.link} to={"https://behance.net/rocketll"}>
+          behance
+        </Link>
       </div>
       <div className={`${styles.links} ${styles.sub}`}>
         <Link to="/colophone">colophone</Link>
@@ -34,9 +46,10 @@ const Right = () => {
   return (
     <div className={styles.right}>
       <p className={styles.desc}>
-        Seoul (KR) based developer and computer science student with a keen interest in design.
-        Specializing in full-stack web development and computational science.
-          <span className={styles.emph}> Available for projects.</span>
+        Seoul (KR) based developer and computer science student with a keen
+        interest in design. Specializing in full-stack web development and
+        computational science.
+        <span className={styles.emph}> Available for projects.</span>
       </p>
       <Links />
     </div>
@@ -47,13 +60,10 @@ const Index = () => (
   <>
     <Helmet
       bodyAttributes={{
-        class: "index home"
+        class: "index home",
       }}
     />
-    <Layout
-      left={<Left />}
-      right={<Right />}
-    />
+    <Layout left={<Left />} right={<Right />} />
   </>
 )
 
