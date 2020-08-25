@@ -10,9 +10,8 @@
 
   .header {
     width: 100%;
-    padding: unquote(
-      "10rem max(10rem, calc(50% - 35rem)) 0 max(10rem, calc(50% - 35rem))"
-    );
+    max-width: 90rem;
+    padding: 10rem 10rem 0 10rem;
     position: fixed;
     z-index: 99;
     display: flex;
