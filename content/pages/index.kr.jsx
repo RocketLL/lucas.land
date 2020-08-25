@@ -20,7 +20,7 @@ const Links = () => {
         <Link className={styles.link} to={"https://behance.net/rocketll"}>behance</Link>
       </div>
       <div className={`${styles.links} ${styles.sub}`}>
-        <Link to="/colophone">colophone</Link>
+        <Link to="/kr/colophone">colophone</Link>
         <Link to="/">english</Link>
       </div>
     </>
@@ -33,7 +33,7 @@ const Right = () => {
       <p className={styles.desc}>
         서울에 살고있는 학생 겸 개발자입니다.
         풀스택 웹 개발과 계산과학이 전문 분야입니다.
-          <span className={styles.emph}>연락주세요.</span>
+          <span className={styles.emph}> 연락주세요.</span>
       </p>
       <Links />
     </div>
