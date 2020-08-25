@@ -32,7 +32,7 @@ const Links = () => {
         </Link>
       </div>
       <div className={`${styles.links} ${styles.sub}`}>
-        <Link to="/colophone">colophone</Link>
+        <Link to="/colophon">colophon</Link>
         <Link to="/kr">korean</Link>
       </div>
     </>

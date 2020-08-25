@@ -5,7 +5,7 @@ import Layout from "../../../src/components/layout"
 import styles from "./_right.module.scss"
 import LeftTemplate from "../../../src/components/left"
 
-const Left = () => <LeftTemplate title="Colophone" subtitle="사이트 정보" />
+const Left = () => <LeftTemplate title="Colophon" subtitle="사이트 정보" />
 
 const Right = () => {
   return (

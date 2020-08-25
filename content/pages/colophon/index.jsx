@@ -6,7 +6,7 @@ import styles from "./_right.module.scss"
 import LeftTemplate from "../../../src/components/left"
 
 const Left = () => (
-  <LeftTemplate title="Colophone" subtitle="Site information" />
+  <LeftTemplate title="Colophon" subtitle="Site information" />
 )
 
 const Right = () => {
