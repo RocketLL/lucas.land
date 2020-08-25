@@ -2,9 +2,12 @@ import React, { useContext } from "react"
 import styles from "../scss/logo.module.scss"
 import { useSpring, animated } from "react-spring"
 import Link from "./link"
+import { LocaleContext } from "./wrapper"
 import { springConfig } from "./configs"
 
 const Logo = ({ className, color }) => {
+  const { locale } = useContext(LocaleContext)
+
   const [props, set] = useSpring(() => ({
     transform: "translate(2000 0)",
     fillOpacity: 1,
@@ -16,7 +19,7 @@ const Logo = ({ className, color }) => {
 
   return (
     <Link
-      to={"/"}
+      to={locale === "en" ? "/" : "/kr"}
       className={`${styles.logo} ${className}`}
       onMouseEnter={() => set({
         transform: "translate(2500 0)",

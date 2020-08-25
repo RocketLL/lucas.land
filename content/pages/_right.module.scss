@@ -17,10 +17,20 @@
 
   .links {
     display: flex;
-    flex-direction: column;
-    margin-top: 6rem;
+    flex-direction: row;
+    margin-top: 3em;
     flex-shrink: 1;
     align-items: flex-start;
     @include var(color, color-txt);
+
+    .link {
+      margin-right: 1rem;
+    }
+
+    &.sub {
+      @include var(color, color-sub-sub);
+      margin-top: 6rem;
+      flex-direction: column;
+    }
   }
 }

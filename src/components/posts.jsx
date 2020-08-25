@@ -16,7 +16,7 @@ const PostLink = ({ post, locale }) => (
     </span>
     <Link
       className={`${styles.title} ${styles.link}`}
-      to={locale === "en" ? "/post/" + post.frontmatter.slug : `kr/${post.frontmatter.slug}`} >
+      to={locale === "en" ? "/post/" + post.frontmatter.slug : `/kr/post/${post.frontmatter.slug}`} >
       {post.frontmatter.title}
     </Link>
   </div>

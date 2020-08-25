@@ -2,7 +2,7 @@ exports.removeTrailingSlash = path =>
   path === `/` ? path : path.replace(/\/$/, ``)
 
 exports.localizedSlug = ({ isDefault, locale, slug }) =>
-  isDefault ? `/${slug}` : `/${locale}/${slug}`
+  isDefault ? `/post/${slug}` : `/${locale}/post/${slug}`
 
 exports.findKey = (object, predicate) => {
   let result
