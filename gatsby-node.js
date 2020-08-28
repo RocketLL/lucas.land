@@ -81,7 +81,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           frontmatter {
             title
             slug
-            desc
+            subtite
           }
           fileAbsolutePath
         }
@@ -100,7 +100,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const locale = post.fields.locale
     const isDefault = post.fields.isDefault
     const title = post.frontmatter.title
-    const desc = post.frontmatter.desc
+    const desc = post.frontmatter.subtitle
 
     createPage({
       path: localizedSlug({ isDefault, locale, slug }),
