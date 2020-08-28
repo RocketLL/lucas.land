@@ -64,7 +64,7 @@ const ThemeToggle = () => {
   )
 }
 
-const Wrapper = ({ children, pageContext: { locale, type }, location }) => {
+const Wrapper = ({ children, pageContext: { locale, type, title, desc }, location }) => {
   const [dark, rawSetDark] = useState(false)
 
   const setDark = val => {
@@ -89,7 +89,7 @@ const Wrapper = ({ children, pageContext: { locale, type }, location }) => {
 
   return (
     <>
-      <SEO location={location} />
+      <SEO location={location} title={title} lang={locale} desc={desc} type={type} />
       <LocaleContext.Provider value={{ locale, location, type }}>
         <ThemeContext.Provider value={{ dark, setDark }}>
           <div className={`${styles.wrapper}`}>

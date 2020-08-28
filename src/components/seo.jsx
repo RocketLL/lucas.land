@@ -2,10 +2,10 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ location: { pathname } }) {
+function SEO({ location: { pathname }, title, lang, desc, type }) {
   const {
     site: {
-      siteMetadata: { title, description, image, url },
+      siteMetadata: { title: siteTitle, description, image, url },
     },
   } = useStaticQuery(
     graphql`
@@ -23,10 +23,14 @@ function SEO({ location: { pathname } }) {
     `
   )
 
+  console.log(title)
+
   return (
     <Helmet
       title={title}
-      titleTemplate={`%s | ${title}`}
+      titleTemplate={`%s | ${siteTitle}`}
+      defaultTitle={"lucas.land"}
+      htmlAttributes={{ lang: lang === "kr" ? "ko" : "en" }}
       meta={[
         {
           name: `description`,
@@ -34,7 +38,7 @@ function SEO({ location: { pathname } }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: `${title}${title ? " | " : ""}${siteTitle}`,
         },
         {
           property: `og:image`,
@@ -42,18 +46,30 @@ function SEO({ location: { pathname } }) {
         },
         {
           property: `og:description`,
-          content: description,
+          content: desc || description,
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: type === "page" ? `website` : "article",
         },
         {
           property: `og:url`,
           content: `${url}${pathname.replace(/^\/|\/$/g, "")}`,
         },
       ]}
-    />
+    >
+      {type === "post" &&
+        <script type="application/ld+json">
+          {`
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": ${title},
+            "author": ${lang === "kr" ? "이윤규" : "Lucas Lee"}
+          }
+         `}
+        </script>}
+    </Helmet>
   )
 }
 

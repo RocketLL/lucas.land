@@ -59,9 +59,26 @@ const Index = () => (
       bodyAttributes={{
         class: "index home",
       }}
-    />
+    >
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "url": "https://lucas.land/",
+          "name": "Lucas Lee",
+          "email": "me@lucas.land",
+          "additionalName": "이윤규",
+          "sameAs": "https://lucas.land/kr"
+        }
+      `}
+      </script>
+    </Helmet>
     <Layout left={<Left />} right={<Right />} />
   </>
 )
 
+const title = "index"
+
+export { title }
 export default Index

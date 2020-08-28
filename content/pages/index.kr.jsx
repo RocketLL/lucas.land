@@ -58,7 +58,21 @@ const Index = () => (
       bodyAttributes={{
         class: "index home",
       }}
-    />
+    >
+      <script type="application/ld+json">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "url": "https://lucas.land/kr",
+          "name": "이윤규",
+          "email": "me@lucas.land",
+          "additionalName": "Lucas Lee",
+          "sameAs": "https://lucas.land"
+        }
+      `}
+      </script>
+    </Helmet>
     <Layout left={<Left />} right={<Right />} />
   </>
 )

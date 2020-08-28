@@ -30,6 +30,7 @@ exports.onCreatePage = ({ page, actions }) => {
       ...page.context,
       locale: lang,
       type: "page",
+      title: pagePath.replace(/\//, "")
     },
   })
 
@@ -78,7 +79,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
           id
           frontmatter {
+            title
             slug
+            desc
           }
           fileAbsolutePath
         }
@@ -96,6 +99,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const slug = post.frontmatter.slug
     const locale = post.fields.locale
     const isDefault = post.fields.isDefault
+    const title = post.frontmatter.title
+    const desc = post.frontmatter.desc
 
     createPage({
       path: localizedSlug({ isDefault, locale, slug }),
@@ -104,6 +109,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         id: post.id,
         locale: locale,
         type: "post",
+        title: title,
+        desc: desc,
       },
     })
   })

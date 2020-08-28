@@ -27,13 +27,15 @@ module.exports = {
         theme_color: `#3310b1`,
         display: `browser`,
         icon: `src/images/ll-logo.png`,
+        lang: `en-US`,
+        description: `Website of Lucas Lee.`,
         localize: [
           {
             start_url: `/kr/`,
-            lang: `kr`,
+            lang: `ko`,
             name: `lucas.land`,
             short_name: `lucas.land`,
-            description: `Website of Lucas Lee.`,
+            description: `이윤규의 웹사이트.`,
           },
         ],
       },
