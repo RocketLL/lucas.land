@@ -74,5 +74,16 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-transition-link`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-99631920-3",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
   ],
 }
