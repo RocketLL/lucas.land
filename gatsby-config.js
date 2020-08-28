@@ -5,6 +5,7 @@ module.exports = {
     author: `Lucas Lee`,
     url: `https://lucas.land/`,
     image: `/card.png`,
+    siteUrl: `https://lucas.land/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
