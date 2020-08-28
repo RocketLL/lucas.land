@@ -81,7 +81,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           frontmatter {
             title
             slug
-            subtite
+            subtitle
           }
           fileAbsolutePath
         }
