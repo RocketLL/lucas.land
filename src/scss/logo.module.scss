@@ -5,6 +5,7 @@
   height: 2rem;
   display: inline-block;
   @include var(fill, color-logo);
+  pointer-events: all;
 
   svg {
     width: 8rem;

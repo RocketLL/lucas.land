@@ -13,19 +13,24 @@
     max-width: 90rem;
     padding: 10rem 10rem 0 10rem;
     position: fixed;
-    z-index: 99;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    pointer-events: none;
+    z-index: 1000;
 
-    &.sticky {
-      backdrop-filter: blur(1rem);
-      transition: background 0.4s;
-      background-color: var(--color-bg-trans-50);
+    @media only screen and (max-width: $breakpoint-l) {
+      pointer-events: all;
 
-      @supports not (backdrop-filter: blur(1px)) {
-        background-color: var(--color-bg-trans-90);
+      &.sticky {
+        backdrop-filter: blur(1rem);
+        transition: background 0.4s;
+        @include var(background-color, color-bg-trans-50);
+
+        @supports not (backdrop-filter: blur(1px)) {
+          @include var(background-color, color-bg-trans-90);
+        }
       }
     }
 
@@ -42,15 +47,11 @@
           @include var(fill, color-txt);
         }
       }
-
-      @media only screen and (max-width: $breakpoint-l) {
-        opacity: 1 !important;
-        pointer-events: all !important;
-      }
     }
 
     @media only screen and (max-width: $breakpoint-l) {
       height: auto;
+      position: relative; // ie11 fallback
       position: sticky;
       padding: 0.5rem 10rem;
       margin: 10rem 0;
@@ -59,23 +60,13 @@
     }
 
     @media only screen and (max-width: $breakpoint-m) {
-      margin: 4rem 0 6rem 0;
+      margin: 3em 0 6rem 0;
       padding: 0.5rem 2rem;
     }
   }
 }
 
-:global body[theme="dark"] :local .sticky {
-  --color-bg-trans-50: #00000080;
-  --color-bg-trans-90: #000000e6;
-}
-
-:global :root :local .sticky {
-  --color-bg-trans-90: #ffffff80;
-  --color-bg-trans-90: #ffffffe6;
-}
-
-:global body.index :local .icon {
+:global body.index :local .wrapper .header .icon {
   @include var(stroke, color-txt);
   @include var(fill, color-txt);
   transition: fill 0.3s, stroke 0.3s;

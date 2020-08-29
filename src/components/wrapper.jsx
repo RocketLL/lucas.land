@@ -28,13 +28,19 @@ const ThemeToggle = () => {
   const [props, set] = useSpring(() => ({
     opacity: 1,
     pointerEvents: "all",
+    from: {
+      opacity: 0,
+      pointerEvents: "none"
+    },
   }))
 
   useEffect(() => {
+    const match = () => (window.pageYOffset > 100 && matchMedia("(min-width: 70rem)").matches)
+
     const handleScroll = () => {
       set({
-        opacity: window.pageYOffset > 100 ? 0 : 1,
-        pointerEvents: window.pageYOffset > 100 ? "none" : "all",
+        opacity: match() ? 0 : 1,
+        pointerEvents: match() ? "none" : "all",
       })
     }
 

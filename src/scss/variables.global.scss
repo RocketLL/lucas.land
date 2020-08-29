@@ -3,7 +3,7 @@ $breakpoint-l: 70rem;
 $breakpoint-m: 50rem;
 
 $colors: (
-  color-txt: #111111,
+  color-txt: #222222,
   color-sub: #00000077,
   color-bg: #ffffff,
   color-hl1: #dd0a7a,
@@ -16,10 +16,13 @@ $colors: (
   color-white: #ffffff,
   color-white-sub: #ffffffaa,
   color-white-sub-sub: #ffffff77,
-  );
+  color-bg-trans-50: #ffffff80,
+  color-bg-trans-90: #ffffffe6,
+  color-em-trans: #3310b180,
+);
 
 $colors-dark: (
-  color-txt: #ffffff,
+  color-txt: #dddddd,
   color-sub: #ffffffaa,
   color-bg: #000000,
   color-hl1: #dd0a7a,
@@ -31,6 +34,9 @@ $colors-dark: (
   color-logo: #ffffff,
   color-white-sub: #ffffff99,
   color-white-sub-sub: #ffffff66,
+  color-bg-trans-50: #00000080,
+  color-bg-trans-90: #000000e6,
+  color-em-trans: #16084980,
 );
 
 @mixin var($var, $color, $opt...) {
