@@ -4,6 +4,7 @@ import React, {
   createContext,
   useContext,
   useRef,
+  forwardRef
 } from "react"
 import { useSpring, animated } from "react-spring"
 import SEO from "./seo"
@@ -14,7 +15,7 @@ import "../scss/styles.global.scss"
 const LocaleContext = createContext()
 const ThemeContext = createContext()
 
-const Header = React.forwardRef(({ location }, ref) => (
+const Header = forwardRef((_props, ref) => (
   <div className={styles.header} ref={ref}>
     <Logo />
     <ThemeToggle />
@@ -36,7 +37,9 @@ const ThemeToggle = () => {
         pointerEvents: window.pageYOffset > 100 ? "none" : "all",
       })
     }
+
     window.addEventListener("scroll", handleScroll, { passive: true })
+
     return () => {
       window.removeEventListener("scroll", handleScroll)
     }
@@ -79,8 +82,7 @@ const Wrapper = ({ children, pageContext: { locale, type, title, desc }, locatio
     rawSetDark(document.body.getAttribute("theme") === "dark")
 
     const observer = new IntersectionObserver(
-      ([e]) =>
-        e.target.classList.toggle(styles.sticky, e.intersectionRatio < 1),
+      ([e]) => e.target.classList.toggle(styles.sticky, e.intersectionRatio < 1),
       { threshold: [1] }
     )
 
@@ -93,7 +95,7 @@ const Wrapper = ({ children, pageContext: { locale, type, title, desc }, locatio
       <LocaleContext.Provider value={{ locale, location, type }}>
         <ThemeContext.Provider value={{ dark, setDark }}>
           <div className={`${styles.wrapper}`}>
-            <Header location={location} ref={el} />
+            <Header ref={el} />
             {children}
           </div>
         </ThemeContext.Provider>
