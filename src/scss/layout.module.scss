@@ -25,9 +25,10 @@ $width-left: 35vw;
     flex-direction: column;
     position: fixed;
     height: 100%;
-    width: unquote("min(31.5rem, 35%)");
+    width: 35%;
+    max-width: 31.5rem;
     padding: 10rem 0 0 10rem;
-
+    
     @media only screen and (max-width: $breakpoint-l) {
       width: 100%;
       height: auto;
@@ -44,8 +45,9 @@ $width-left: 35vw;
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: unquote("min(58.5rem, 65%)");
-    margin-left: unquote("min(31.5rem, 35%)");
+    width: 65%;
+    max-width: 58.5rem;
+    margin-left: 35%;
     padding: 10rem 10rem 10rem 5rem;
 
     @media only screen and (max-width: $breakpoint-l) {
