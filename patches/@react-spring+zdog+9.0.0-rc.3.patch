@@ -1,0 +1,71 @@
+diff --git a/node_modules/@react-spring/zdog/package.json b/node_modules/@react-spring/zdog/package.json
+index a03561e..003cb57 100644
+--- a/node_modules/@react-spring/zdog/package.json
++++ b/node_modules/@react-spring/zdog/package.json
+@@ -1,34 +1,39 @@
+ {
+-  "_from": "https://registry.npmjs.org/@react-spring/zdog/-/zdog-9.0.0-rc.3.tgz",
++  "_args": [
++    [
++      "@react-spring/zdog@9.0.0-rc.3",
++      "C:\\Users\\rocketll\\devel\\lucas.land-next"
++    ]
++  ],
++  "_from": "@react-spring/zdog@9.0.0-rc.3",
+   "_id": "@react-spring/zdog@9.0.0-rc.3",
+   "_inBundle": false,
+   "_integrity": "sha512-fl2JI098sfOJ+BaS9xCrnz8NSimL8yPrVwO0lHSpXLn/q3o3MYmRAeJnZQv8yDtT6isTHua6Tfb9vWuZWEXSmA==",
+   "_location": "/@react-spring/zdog",
+   "_phantomChildren": {},
+   "_requested": {
+-    "type": "remote",
+-    "raw": "@react-spring/zdog@https://registry.npmjs.org/@react-spring/zdog/-/zdog-9.0.0-rc.3.tgz",
++    "type": "version",
++    "registry": true,
++    "raw": "@react-spring/zdog@9.0.0-rc.3",
+     "name": "@react-spring/zdog",
+     "escapedName": "@react-spring%2fzdog",
+     "scope": "@react-spring",
+-    "rawSpec": "https://registry.npmjs.org/@react-spring/zdog/-/zdog-9.0.0-rc.3.tgz",
+-    "saveSpec": "https://registry.npmjs.org/@react-spring/zdog/-/zdog-9.0.0-rc.3.tgz",
+-    "fetchSpec": "https://registry.npmjs.org/@react-spring/zdog/-/zdog-9.0.0-rc.3.tgz"
++    "rawSpec": "9.0.0-rc.3",
++    "saveSpec": null,
++    "fetchSpec": "9.0.0-rc.3"
+   },
+   "_requiredBy": [
+-    "/"
++    "/react-spring"
+   ],
+   "_resolved": "https://registry.npmjs.org/@react-spring/zdog/-/zdog-9.0.0-rc.3.tgz",
+-  "_shasum": "00f611042b3761b984d0ca2c98da7dddcc11f081",
+-  "_spec": "@react-spring/zdog@https://registry.npmjs.org/@react-spring/zdog/-/zdog-9.0.0-rc.3.tgz",
+-  "_where": "C:\\Users\\rocketll\\AppData\\Local\\Temp\\tmp-87068xyG0buCh8Zuh",
++  "_spec": "9.0.0-rc.3",
++  "_where": "C:\\Users\\rocketll\\devel\\lucas.land-next",
+   "author": {
+     "name": "Paul Henschel"
+   },
+   "bugs": {
+     "url": "https://github.com/react-spring/react-spring/issues"
+   },
+-  "bundleDependencies": false,
+   "contributors": [
+     {
+       "name": "Alec Larson",
+@@ -41,7 +46,6 @@
+     "@react-spring/core": "9.0.0-rc.3",
+     "@react-spring/shared": "9.0.0-rc.3"
+   },
+-  "deprecated": false,
+   "description": "Cross-platform animation engine for React",
+   "devDependencies": {
+     "typescript": "3.8.3"
+@@ -71,7 +75,6 @@
+   "publishConfig": {
+     "access": "public"
+   },
+-  "sideEffects": false,
+   "types": "index.d.ts",
+   "version": "9.0.0-rc.3"
+ }

@@ -1,29 +1,36 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Link } from "gatsby"
-import styles from "../scss/post.module.scss"
+import styled from "styled-components"
+import { rem } from "../components/themes"
 import Layout from "../components/layout"
-import Left from "../components/left"
 
-import "../scss/syntax.global.scss"
 import "katex/dist/katex.min.css"
 
 const shortcodes = { Link }
 
+const StyledArticle = styled.article`
+  line-height: 1.5;
+`
+
+const StyledTitle = styled.h1`
+  font-size: 2em;
+  font-weight: 700;
+`
+
+const PostContent = ({ mdx }) => (
+  <StyledArticle>
+    <MDXProvider components={shortcodes}>
+      <MDXRenderer>{mdx.body}</MDXRenderer>
+    </MDXProvider>
+  </StyledArticle>
+)
+
 const PostTemplate = ({ data: { mdx } }) => (
   <Layout
-    left={
-      <Left title={mdx.frontmatter.title} subtitle={mdx.frontmatter.subtitle} />
-    }
-    right={
-      <div className={`${styles.post} ${mdx.fields.locale}`}>
-        <MDXProvider components={shortcodes}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </MDXProvider>
-      </div>
-    }
+    left={<StyledTitle>{mdx.frontmatter.title}</StyledTitle>}
+    right={<PostContent mdx={mdx} />}
   />
 )
 

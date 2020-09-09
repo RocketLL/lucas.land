@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ location: { pathname }, title, lang, desc, type }) {
+const SEO = ({ location: { pathname }, title, lang, desc, type }) => {
   const {
     site: {
       siteMetadata: { title: siteTitle, description, image, url },
@@ -58,7 +58,7 @@ function SEO({ location: { pathname }, title, lang, desc, type }) {
         },
       ]}
     >
-      {type === "post" &&
+      {type === "post" && (
         <script type="application/ld+json">
           {`
           {
@@ -68,7 +68,8 @@ function SEO({ location: { pathname }, title, lang, desc, type }) {
             "author": ${lang === "kr" ? "이윤규" : "Lucas Lee"}
           }
          `}
-        </script>}
+        </script>
+      )}
     </Helmet>
   )
 }

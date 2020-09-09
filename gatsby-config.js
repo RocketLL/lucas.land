@@ -5,7 +5,7 @@ module.exports = {
     author: `Lucas Lee`,
     url: `https://lucas.land/`,
     image: `/card.png`,
-    siteUrl: `https://lucas.land/`
+    siteUrl: `https://lucas.land/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -68,16 +68,9 @@ module.exports = {
         path: `${__dirname}/content/pages`,
       },
     },
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        postCssPlugins: [require("autoprefixer")()],
-      },
-    },
     `gatsby-transformer-json`,
     `gatsby-plugin-preload-fonts`,
-    `gatsby-plugin-transition-link`,
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -88,5 +81,7 @@ module.exports = {
         respectDNT: true,
       },
     },
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-transition-link`
   ],
 }
