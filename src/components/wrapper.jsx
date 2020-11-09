@@ -8,14 +8,15 @@ import Header from "./header"
 import "../fonts.css"
 
 const Container = styled.div`
-  display: block;
+  /* display: block;
   max-width: ${({ theme }) => rem(theme.maxWidth)};
   height: 100%;
-  
+  padding: 0 2rem;
+
   @media only screen and (min-width: ${({ theme }) => theme.breakpointLarge}) {
-    margin: 20rem 0 0 0;
-  }
-)}
+    padding: 0 10rem;
+    margin: 20rem auto 0 auto;
+  } */
 `
 
 const Wrapper = ({
@@ -23,7 +24,7 @@ const Wrapper = ({
   pageContext: { locale, type, title, desc },
   location,
 }) => {
-  const [theme, setTheme] = useState("dark")
+  const [theme, setTheme] = useState("light")
 
   const toggleTheme = () => {
     theme === "dark" ? setTheme("light") : setTheme("dark")
@@ -39,7 +40,7 @@ const Wrapper = ({
         desc={desc}
         type={type}
       />
-      <Header location={location} toggleTheme={toggleTheme} />
+      {/* <Header location={location} toggleTheme={toggleTheme} /> */}
       <Container>{children}</Container>
     </ThemeProvider>
   )

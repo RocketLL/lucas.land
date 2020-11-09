@@ -1,18 +1,19 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
-import Layout, { AniLink } from "../../src/components/layout"
+import Link from "../../src/components/links"
 
-const PostLink = styled(AniLink)`
+const PostLink = styled(Link)`
   color: inherit;
   display: flex;
   flex-direction: column;
   text-decoration: none;
   padding: 1rem;
   &:hover {
-    background: ${({ theme }) => theme.sub};
+    background: ${({ theme: { colors } }) => colors.sub};
   }
-  border-radius: 0.1rem;
+  border-radius: 0.5rem;
+  width: 100%;
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpointLarge}) {
     box-sizing: content-box;
@@ -27,7 +28,7 @@ const PostTitle = styled.h2`
 `
 
 const PostSubtitle = styled.span`
-  color: ${({ theme }) => theme.sub};
+  color: ${({ theme: { colors } }) => colors.sub};
 `
 
 const Post = ({ post }) => (
@@ -88,10 +89,9 @@ const Posts = ({ pageContext: { locale } }) => {
       />
     ))
 
-  return <Layout
-    left={<Left />}
-    right={posts}
-  />
+  return <div>
+    {posts}
+  </div>
 }
 
 export default Posts

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import TransitionLink, { TransitionState } from "gatsby-plugin-transition-link"
+import { TransitionState } from "gatsby-plugin-transition-link"
 import { animated, Transition } from "react-spring"
 import { springConfig } from "./configs"
 
@@ -8,32 +8,38 @@ const WrapperContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0 10rem;
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpointLarge}) {
     margin: 0 2rem;
   }
 `
 
-const Left = styled.div`
+const Left = styled(animated.div)`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   height: 100%;
+
   @media only screen and (min-width: ${({ theme }) => theme.breakpointLarge}) {
-    max-width: 35%;
+    width: ${({ theme }) => theme.leftRatio}%;
+    max-width: ${({ theme }) => theme.leftRatio / 100 * theme.maxWidth}rem;
     position: fixed;
+    padding: 0 4rem 0 10rem;
   }
 `
 
-const Right = styled.main`
+const Right = styled(animated.main)`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   height: 100%;
   margin: 4rem 0 0 0;
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpointLarge}) {
-    max-width: 65%;
-    margin: 0 0 0 35% ;
+    width: ${({ theme }) => 100 - theme.leftRatio}%;
+    max-width: ${({ theme }) => (100 - theme.leftRatio) / 100 * theme.maxWidth}rem;
+    margin: 0 0 0 ${({ theme }) => theme.leftRatio}%;
+    padding: 0 10rem 0 0;
   }
 `
 
@@ -48,7 +54,7 @@ const LeftState = ({ children }) => (
           leave={{ opacity: 0 }}
           config={springConfig}>
           {(props, show) =>
-            show && <animated.div style={props}>{children}</animated.div>
+            show && <Left style={props}>{children}</Left>
           }
         </Transition>
       )
@@ -67,7 +73,7 @@ const RightState = ({ children }) => (
           leave={{ opacity: 0, transform: "translate3D(0, 30rem, 0)" }}
           config={springConfig}>
           {(props, show) =>
-            show && <animated.div style={props}>{children}</animated.div>
+            show && <Right style={props}>{children}</Right>
           }
         </Transition>
       )
@@ -75,29 +81,15 @@ const RightState = ({ children }) => (
   </TransitionState>
 )
 
-const AniLink = ({ children, ...props }) => (
-  <TransitionLink
-    exit={{ length: 1 }}
-    entry={{ length: 1, delay: 0.2 }}
-    {...props}>
-    {children}
-  </TransitionLink>
-)
-
 const Wrapper = ({ left, right }) => (
   <WrapperContainer>
     <LeftState>
-      <Left>
-        {left}
-      </Left>
+      {left}
     </LeftState>
     <RightState>
-      <Right>
-        {right}
-      </Right>
+      {right}
     </RightState>
   </WrapperContainer>
 )
 
-export { AniLink }
 export default Wrapper

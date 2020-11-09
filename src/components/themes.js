@@ -9,30 +9,33 @@ const rgba = (hex) => {
   const b = parseHex(hex.slice(5, 7))
   const a = parseHex(hex.slice(7, 9))
 
-  return `rgba(${r}, ${g}, ${b}, ${a})`
+  return `rgba(${r}, ${g}, ${b}, ${a / 255})`
 }
 
 const lightColors = {
   body: "#ffffff",
   text: "#222222",
-  sub: "#dddddd",
+  sub: rgba("#00000077"),
+  selectionBackground: rgba("#6bff7bcc"),
+  selectionText: "#222222",
 }
 
 const darkColors = {
   body: "#000000",
   text: "#dddddd",
-  sub: "#333333",
+  sub: rgba("#ffffff77"),
+  selectionBackground: rgba("#6bff7bcc"),
+  selectionText: "#222222",
 }
 
 const globalTheme = {
   maxWidth: 90,
-  selectionBackground: rgba("#f3ff6bcc"),
-  selectionText: "#222222",
   breakpointLarge: "70rem",
-  breakpointMedium: "30rem"
+  breakpointMedium: "30rem",
+  leftRatio: 35
 }
 
-const lightTheme = { ...lightColors, ...globalTheme }
-const darkTheme = { ...darkColors, ...globalTheme }
+const lightTheme = { colors: { ...lightColors }, ...globalTheme }
+const darkTheme = { colors: { ...darkColors }, ...globalTheme }
 
 export { lightTheme, darkTheme, rem, em, rgba }

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { rem } from "./themes"
-import { AniLink } from "./layout"
+import Link from "./links"
 
 const StyledHeader = styled.header`
   display: flex;
@@ -15,14 +15,18 @@ const StyledHeader = styled.header`
 
   @media only screen and (min-width: ${({ theme }) => theme.breakpointLarge}) {
     padding: 10rem 10rem 5rem 10rem;
+    margin: auto;
+    left: 0;
+    right: 0;
     position: fixed;
     top: 0;
   }
 `
 
 const StyledSvg = styled.svg`
-  fill: ${({ theme }) => theme.text};
+  fill: ${({ theme: { colors } }) => colors.text};
   width: 2rem;
+  transition: fill 0.2s ease-in-out;
 `
 
 const Logo = () => (
@@ -51,9 +55,9 @@ const Logo = () => (
 const Header = ({ location, toggleTheme }) =>
   location.pathname === "/ksk" ? null : (
     <StyledHeader>
-      <AniLink to="/">
+      <Link to="/">
         <Logo />
-      </AniLink>
+      </Link>
       <button onClick={toggleTheme}>toggle</button>
     </StyledHeader>
   )

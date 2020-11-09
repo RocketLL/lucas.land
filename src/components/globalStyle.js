@@ -1,12 +1,17 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    color: ${({ theme }) => theme.text};
-    background-color: ${({ theme }) => theme.body};
-    font-family: Inter, "Noto Sans KR", sans-serif;
-    font-feature-settings: "calt", "kern", "liga";
+  html {
     font-size: 14px;
+  }
+
+  body {
+    color: ${({ theme: { colors } }) => colors.text};
+    background-color: ${({ theme: { colors } }) => colors.body};
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    font-family: "Helvetica Now Display", Inter, "Noto Sans KR", sans-serif;
+    font-feature-settings: "calt", "kern", "liga";
+    letter-spacing: -0.006em;
     margin: 0;
   }
 
@@ -15,8 +20,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    color: #000000;
-    background-color: ${({ theme }) => theme.selectionBackground};
+    color: ${({ theme: { colors } }) => colors.selectionText};
+    background-color: ${({ theme: { colors } }) => colors.selectionBackground};
   }
 
   .tl-edges {
@@ -25,9 +30,9 @@ const GlobalStyle = createGlobalStyle`
 
   pre[class*="language-"],
   code {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme: { colors } }) => colors.text};
     background: none;
-    font-family: "Iosevka", monospace;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
     font-feature-settings: "calt", "kern", "liga";
     font-size: 1em;
     text-align: left;
@@ -36,7 +41,8 @@ const GlobalStyle = createGlobalStyle`
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-
+    scrollbar-base-color: dark;
+    scrollbar-width: thin;
     tab-size: 4;
 
     hyphens: none;
@@ -47,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0.5em -1em;
     overflow: auto;
     box-sizing: content-box;
-    border: 1px solid ${({ theme }) => theme.sub};
+    border: 1px solid ${({ theme: { colors } }) => colors.sub};
 
     @media only screen and (max-width: $breakpoint-l) {
       padding: 1em;
@@ -59,18 +65,18 @@ const GlobalStyle = createGlobalStyle`
   /* Inline code */
   :not(pre) > code {
     white-space: normal;
-    background: ${({ theme }) => theme.sub};
+    background: ${({ theme: { colors } }) => colors.sub};
   }
 
   .token.comment,
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: ${({ theme }) => theme.sub};
+    color: ${({ theme: { colors } }) => colors.sub};
   }
 
   .token.punctuation {
-    color: ${({ theme }) => theme.sub};
+    color: ${({ theme: colors }) => colors.sub};
   }
 
   .token.namespace {
@@ -84,7 +90,7 @@ const GlobalStyle = createGlobalStyle`
   .token.constant,
   .token.symbol,
   .token.deleted {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme: { colors } }) => colors.text};
   }
 
   .token.selector,
@@ -93,7 +99,7 @@ const GlobalStyle = createGlobalStyle`
   .token.char,
   .token.builtin,
   .token.inserted {
-    color: ${({ theme }) => theme.sub};
+    color: ${({ theme: { colors } }) => colors.sub};
   }
 
   .token.operator,
@@ -101,7 +107,7 @@ const GlobalStyle = createGlobalStyle`
   .token.url,
   .language-css .token.string,
   .style .token.string {
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme: { colors } }) => colors.text};
   }
 
   .token.atrule,
