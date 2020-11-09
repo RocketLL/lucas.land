@@ -76,8 +76,8 @@
   font-weight: 400;
   font-display: fallback;
   src: local("☺"),
-    url("./fonts/Jetbrains-Mono-400-normal.woff2") format("woff2"),
-    url("./fonts/Jetbrains-Mono-400-normal.woff") format("woff");
+    url("./fonts/JetBrains-Mono-400-normal.woff2") format("woff2"),
+    url("./fonts/JetBrains-Mono-400-normal.woff") format("woff");
 }
 
 @font-face {
@@ -86,8 +86,8 @@
   font-weight: 400;
   font-display: fallback;
   src: local("☺"),
-    url("./fonts/Jetbrains-Mono-400-italic.woff2") format("woff2"),
-    url("./fonts/Jetbrains-Mono-400-italic.woff") format("woff");
+    url("./fonts/JetBrains-Mono-400-italic.woff2") format("woff2"),
+    url("./fonts/JetBrains-Mono-400-italic.woff") format("woff");
 }
 
 @font-face {
