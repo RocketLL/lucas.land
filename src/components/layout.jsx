@@ -38,10 +38,11 @@ const RightState = ({ children }) => (
           to={{
             // transform: mount ? "translateX(0px)" : "translateX(-100px)",
             opacity: mount ? 1 : 0,
+            transform: mount ? "translateY(0px)" : "translateY(30rem)"
           }}
-          config={{
-            duration: seconds * 1000,
-          }}
+          // config={{
+          //   duration: seconds * 1000,
+          // }}
         >
           {props => <animated.div style={props}>{children}</animated.div>}
         </Spring>
