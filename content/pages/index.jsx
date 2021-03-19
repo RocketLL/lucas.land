@@ -6,27 +6,33 @@ import Link from "../../src/components/links"
 import Gallery from "../../src/components/gallery"
 
 const Layout = styled.div`
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 2fr 8fr 2fr 1fr;
-  grid-template-rows: 1fr 5fr 1fr;
+  -ms-grid-columns: 1fr 3fr 10fr 3fr 1fr;
+  grid-template-columns: 0rem 2fr 10fr 2fr 0rem;
+  -ms-grid-rows: 1fr 1fr 8fr 1fr 1fr;
+  grid-template-rows: 0rem 1fr 8fr 1fr 0rem;
   grid-template-areas:
+    ". . . . ."
     ". name . links ."
     ". . gallery . ."
-    ". . gallery contact .";
-  margin: 1rem 1rem 0 1;
+    ". info . contact ."
+    ". . . . .";
   height: 100vh;
-  column-gap: 3rem;
+  padding: 5rem;
 
   @media only screen and (max-width: 1000px) {
-    margin: 2em 1em 1em 1em;
+    padding: 2em 1em 1em 1em;
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.2em 1.2em 5fr auto;
-    row-gap: 2rem;
+    -ms-grid-rows: 1.2em 1.2em 4rem auto auto;
+    grid-template-rows: 2rem 5rem 4rem 100vw 5rem;
     grid-template-areas:
       "name"
       "contact"
       "links"
-      "gallery";
+      "gallery"
+      "info";
   }
 `
 
@@ -36,7 +42,34 @@ const Name = styled.h1`
   margin: 0;
   grid-area: name;
   justify-self: start;
-  align-self: center;
+  align-self: start;
+
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-align: start;
+  -ms-grid-row-align: start;
+`
+
+const Info = styled.p`
+  font-size: 0.9em;
+  font-family: "JetBrains Mono", monospace;
+  color: #aaa;
+  grid-area: info;
+  justify-self: start;
+  align-self: end;
+  max-width: 19vw;
+  margin: 0;
+
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-align: start;
+  -ms-grid-row-align: end;
+
+  @media only screen and (max-width: 1000px) {
+    align-self: start;
+    justify-self: start;
+  }
 `
 
 const Links = styled.div`
@@ -46,12 +79,20 @@ const Links = styled.div`
   grid-area: links;
   align-items: flex-end;
   justify-self: end;
-  align-self: center;
+  align-self: start;
+
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  -ms-grid-column-align: end;
+  -ms-grid-row-align: start;
 
   @media only screen and (max-width: 1000px) {
     align-items: flex-start;
-    align-self: start;
     justify-self: start;
+    align-self: start;
+
+    -ms-grid-column-align: start;
+    -ms-grid-row-align: start;
   }
 `
 
@@ -65,10 +106,16 @@ const Mail = styled.a`
   color: inherit;
   grid-area: contact;
   justify-self: end;
-  align-self: center;
+  align-self: end;
+
+  -ms-grid-row: 4;
+  -ms-grid-column: 4;
+
+  -ms-grid-column-align: end;
+  -ms-grid-row-align: end;
 
   @media only screen and (max-width: 1000px) {
-    align-self: center;
+    align-self: start;
     justify-self: start;
   }
 `
@@ -76,7 +123,18 @@ const Mail = styled.a`
 const StyledGallery = styled(Gallery)`
   grid-area: gallery;
   justify-self: center;
-  align-self: end;
+  align-self: center;
+
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+
+  -ms-grid-column-align: center;
+  -ms-grid-row-align: center;
+
+  @media only screen and (max-width: 1000px) {
+    align-self: start;
+    justify-self: center;
+  }
 `
 
 const Index = () => (
@@ -89,11 +147,17 @@ const Index = () => (
     <Layout>
       <Name>Lucas Lee</Name>
       <Links>
-        <StyledLink to="/posts">posts</StyledLink>
-        <StyledLink to="https://github.com/rocketll">github</StyledLink>
+        <StyledLink to="/posts">Posts</StyledLink>
+        <StyledLink to="https://github.com/rocketll">Github</StyledLink>
       </Links>
       <StyledGallery />
       <Mail href="mailto:me@lucas.land">me@lucas.land</Mail>
+      <Info>
+        {/* KdV equation (u<sub>t</sub> + uu<sub>x</sub> + au<sub>xxx</sub> = 0) solution.
+        x-axis is spatial, y-axis is temporal.
+        solved through spectral method with rk4 time-stepping. */}
+        KdV equation solution
+      </Info>
     </Layout>
   </>
 )
